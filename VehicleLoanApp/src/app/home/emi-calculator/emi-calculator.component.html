@@ -1,0 +1,28 @@
+
+<header>
+    <h2>VEHICLE LOAN</h2>
+  </header>
+
+  <section>
+    <h1>EMI Calculator</h1>
+<div ng-app="myApp" ng-controller="emiCtrl" ng-init="loanAmt=10000; interest=10; tenure=120">
+<form class="emicalculator">
+<p>Enter Loan Amount <input type="text" ng-model="loanAmt"></p>
+<p>Enter Interest Rate(%)<input type="text" ng-model="interest"></p>
+<p>Enter Tenure in months<input type="text" ng-model="tenure"></p> 
+<p>EMI per month <br><input type="text" ng-model="emi"></p>   
+</form>
+</div> 
+  </section>
+  
+  <footer class="footer">
+    <a href="#aboutus">About Us</a>
+     &nbsp;&nbsp;
+      <a href="#privacyPolicy">Privicy Policy </a>
+    &nbsp; &nbsp;
+    <a href="#carrier">Carrier</a>
+    <br><br><br>&nbsp;&nbsp;   
+     <p>@vehicleloan, Some rights reserved</p>
+ 
+  </footer>
+

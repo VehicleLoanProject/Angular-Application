@@ -1,0 +1,44 @@
+<header>
+    <h2>VEHICLE LOAN</h2>
+  </header>
+    <H1>Check Eligibilty</H1>
+<body>
+  <form #eligibilityForm="ngForm" (ngSubmit)="checkeligibility(eligibilityForm.value)">
+    <label for="fage"> Age of the Applicant</label><br>
+    <input type="number" id="fage" name="fage" ngModel required #fage="ngModel"><br><br>
+    <label for="fincome">Annual Income:</label><br>
+    <input type="number" id="fincome" name="fincome" ngModel required #fincome="ngModel" ><br><br>
+    <label for="femployent"> Type of Employment</label><br>
+    <input type="radio" name="employement" value="Salaried" id="Salaried" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >Salaried</label>
+    <input type="radio" name="employement" value="Self-Employed" id="Self-Employed" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >Self-Employed</label>
+    <input type="radio" name="employement" value="None" id="None" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >None</label><br>
+    <br>
+    <br>
+    <label for="fplaceOfResidence" >Country</label><br>
+    <input  type="radio" name="recidence" value="India" id="India" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >India</label>
+    <input type="radio" name="recidence" value="Other" id="Other" ngmodel>  &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >Other</label>
+    <br><br>
+    <label for="fresidenceDuration">Duration (Month) of Stay in Current Residence </label><br>
+    <input type="number" id="fresidenceDuration" name="fresidenceDuration" ngModel required #fresidenceDuration="ngModel"><br>
+    <br>
+    <button class="button" type="submit">CheckEligibility</button>
+  </form>
+</body>
+
+
+  <footer class="footer">
+    <a href="#aboutus">About Us</a>
+     &nbsp;&nbsp;
+      <a href="#privacyPolicy">Privicy Policy </a>
+    &nbsp; &nbsp;
+    <a href="#carrier">Carrier</a>
+    <br><br><br>&nbsp;&nbsp;   
+     <p>@vehicleloan, Some rights reserved</p>
+ 
+  </footer>
+

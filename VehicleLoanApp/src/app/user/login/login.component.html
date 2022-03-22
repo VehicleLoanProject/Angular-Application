@@ -1,0 +1,37 @@
+<html>
+<head>    
+    <title>LoginPage</title>    
+    <link rel="stylesheet" type="text/css" href="login.component.css">    
+</head>    
+<body> 
+    
+<header >
+    <h2>VEHICLE LOAN</h2>
+  </header>   
+    <div class="header1"><h2>Login Here</h2></div><br>    
+    <div class="login">    
+    <form #loginForm="ngForm" (ngSubmit)="loginData(loginForm.value)">    
+        <label for="Uname"><b>User Name     
+        </b>    
+        </label>    
+        <input type="email" name="Uname" id="Uname" placeholder="Username" ngModel required="email" #Uname="ngModel">
+        <span class="text-danger"
+                                *ngIf="(Uname.touched || loginForm.submitted)">
+                                <b><h6> User Name required</h6></b>
+                            </span>    
+        <br>   
+        <label for="Pass"><b>Password     
+        </b>    
+        </label>    
+        <input type="password" name="Pass" id="Pass" placeholder="Password" ngModel required="password" #Pass="ngModel">   
+        <span class="text-danger"
+                                *ngIf="(Pass.touched || loginForm.submitted)">
+                                <b><h6> Password required</h6></b>
+                            </span>   
+        <br><br>    
+        <button routerLink="/login" type="submit" [disabled]="!loginForm.valid">LOGIN</button>         
+        <br><br>     
+    </form>     
+</div>    
+</body>    
+</html>   

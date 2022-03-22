@@ -1,0 +1,90 @@
+input[type=text]:focus {
+    border: 3px solid #555;
+  }
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }  
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  div {
+    width: 300px;
+    border: 5px solid rgb(1, 252, 1);
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+    
+  }
+  header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin-top:10px;
+    height: 100px;
+  }
+  
+  /* Create two columns/boxes that floats next to each other */
+  nav {
+    float: left;
+    width: 30%;
+    height: 700px; /* only for demonstration, should be removed */
+    background: white;
+    padding: 20px;
+  }
+  
+  /* Style the list inside the menu */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color:white;
+    height: 500px; 
+  }
+  
+  /* Clear floats after the columns */
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  .h1
+  {
+    height: 10px;
+    background-color: #04AA6D;
+  }
+  body  
+  {  
+    margin: 0;  
+    padding: 0;  
+    background-color:white;  
+    font-family: 'Arial';  
+  }  
+  button
+  {
+  color: black;
+  height: 50px;
+  background-color: #04AA6D;
+  }
+  
