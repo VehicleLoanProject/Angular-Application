@@ -1,0 +1,10 @@
+.container{
+    display: grid;
+    grid-template-columns: auto;
+    float: left;
+    width: 200px;
+}
+button{
+    border: 0px;
+    background-color: white;
+}

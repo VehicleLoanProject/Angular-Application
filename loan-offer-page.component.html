@@ -1,0 +1,64 @@
+<section>
+        <div class="container">
+            <div class="card">
+                <div class="card-body"><p routerLink = '/loan-scheme'>Loan Schemes</p> </div>
+                    
+            </div>
+                <div class="card">
+                    <div class="card-body"><p routerLink = '/loan-offer-page'>Scheme3</p></div>
+                </div>
+
+            <div class="card">
+                <div class="card-body"><p routerLink = '/loan-offer-page'>Scheme3</p> </div>
+            </div>
+
+              <div class="card">
+                    <div class="card-body">
+                        <p routerLink = '/loan-offer-page'>Scheme3</p>
+                    </div>
+            </div> 
+                    
+        </div>
+
+<div id="main" class="center" >
+    <h2>New Car Loan</h2>
+    <p>loan quotes</p>
+    <br><br><br>
+
+    <table >
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td>
+                    Loan Amount Upto
+                </td>
+                <td>
+                    {{ loanAmount | currency : 'INR'}}
+                </td>
+            </tr> 
+            <tr>
+                <td>Best Rate</td>
+                <td>{{interst | percent}}</td>
+            </tr> 
+            <tr>
+                <td>Emi</td>
+                <td>{{emi | currency : 'INR'}}</td>
+            </tr> 
+            <tr>
+                <td>Processing Fee</td>
+                <td>{{processingFee | currency : 'INR'}}</td>
+            </tr> 
+            <tr>
+                <td>Account Type</td>
+                <td>{{accountType}}</td>
+            </tr>
+        </tbody>  
+        
+           
+    </table>
+    <br><br>
+<button type="button" class="btn btn-primary">Emi Scheduler</button>&nbsp;&nbsp;
+<button type="button" class="btn btn-primary">Apply Now</button>
+
+</div>
+</section>
