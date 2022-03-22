@@ -1,44 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-emi-calculator',
   templateUrl: './emi-calculator.component.html',
   styleUrls: ['./emi-calculator.component.css']
 })
-export class EmiCalculatorComponent implements OnInit {
+export class EmiCalculatorComponent  {
 
   constructor() { }
+  amount:number=0;
+  rate:number=0;
+  time:number=0;
+  emi:number=0;
+  mir:number=0;
+  top:number=0;
+  bottom:number=0;
+  sp:number=0;
+  tip:number=0;
+  tp:number=0;
 
-  ngOnInit(): void {
+  
+  emiCalculator(){
+    this.mir=(this.rate/100)/12;
+    this.top=Math.pow((1+this.mir),this.time);
+    this.bottom=this.top-1;
+    this.sp=this.top/this.bottom;
+    this.emi=((this.amount * this.mir) * this.sp);
+    this.tip=this.emi+this.time;
+    this.tp=this.tip+this.amount;
+
   }
-
-   calculator(data:any) {
-    const loanstruct = {
-    loanAmount:Number,
-    annualInterestrate:Number,
-    loanDuration:Number
-    };
-  // Passing the object as the arguement. The function also returns an object that includes both EMI & Total
-  console.log(loanstruct)
-  function EMIVal2(data:any){
-      let interest=data.annualInterestrate/1200;
-      let term = data.loanDuration*12;
-      let top = Math.pow((1+interest),term);
-      let bottom = top - 1;
-      let ratio = top/bottom;
-      let EMI= data.loanAmount * interest * ratio;
-      let Total = EMI*term;
-      const EMIObj = {
-        EMI:EMI.toFixed(0),
-        Total:Total.toFixed(0)
-        };
-      return EMIObj
-  }
-  console.log(EMIVal2(loanstruct));
-
-
-  return false
-}
 
 }

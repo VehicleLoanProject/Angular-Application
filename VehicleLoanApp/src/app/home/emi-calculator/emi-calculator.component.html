@@ -1,27 +1,70 @@
 
-<header>
+<header class="header1">
     <h2>VEHICLE LOAN</h2>
   </header>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <section>
-    <h1>EMI Calculator</h1>
-<div ng-app="myApp" ng-controller="emiCtrl" ng-init="loanAmt=10000; interest=10; tenure=120">
-<form class="emicalculator">
-<p>Enter Loan Amount <input type="text" ng-model="loanAmt"></p>
-<p>Enter Interest Rate(%)<input type="text" ng-model="interest"></p>
-<p>Enter Tenure in months<input type="text" ng-model="tenure"></p> 
-<p>EMI per month <br><input type="text" ng-model="emi"></p>   
-</form>
-</div> 
-  </section>
+  </head>
+  <br>
+<div class=" container row">
+<div class=" container jumbotron alert alert-success col-md-offset-3 col-md-6"><h2>EMI Calculator</h2>
+</div>
+</div>
+<div class="container row">
+<div class="container col-md-offset-3 col-md-6">
+  <div class="form">
+    <div class="form-group">
+      <label>Car Loan Amount</label>
+      <input type="number" 
+      class="form-control" [(ngModel)]="amount">
+    </div>
+
+    <div class="form-group">
+      <label>Rate Of Intrest</label>
+      <input type="number"
+      class="form-control" [(ngModel)]="rate">
+    </div>
+
+    <div class="form-group">
+      <label>Tenure (In Months)</label>
+      <input type="number" 
+      class="form-control" [(ngModel)]="time">
+    </div>
+
+    <div class="form-group">
+      <input type="submit" 
+      class="form-control btn btn-primary" 
+      value="Loan EMI" (click)="emiCalculator()">
+    </div>
+
+    <div class="form-group">
+      <label> EMI </label>
+      <input type="number"
+      class="form-control" disabled [(ngModel)]="emi">
+    </div>
+
+  </div>
+</div>
+</div>
+<br>
+
+<div class="container row">
+<div class="container col-md-6 col-md-offset-3"><h4>
+  Total Interest Payble <br>
+  {{tip | currency:'INR' }}
+  <br><br>
+  Total Payment <h4>(Principal + Interest) </h4>
+   {{ tp | currency:'INR' }}
+</h4></div></div>
   
-  <footer class="footer">
+  <footer class="footer1">
     <a href="#aboutus">About Us</a>
      &nbsp;&nbsp;
       <a href="#privacyPolicy">Privicy Policy </a>
     &nbsp; &nbsp;
     <a href="#carrier">Carrier</a>
-    <br><br><br>&nbsp;&nbsp;   
+    <br>  <br>
      <p>@vehicleloan, Some rights reserved</p>
  
   </footer>
