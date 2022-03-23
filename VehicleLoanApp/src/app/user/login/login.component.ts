@@ -12,9 +12,9 @@ export class LoginComponent implements OnInit {
   InUse!:boolean
   userlogin:FormGroup = new FormGroup(
     {
-      UserEmail:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
-      Userpassword:new FormControl('',[Validators.pattern("[]"),Validators.required]),
-      UserRole:new FormControl('',[Validators.pattern("[]"),Validators.required])
+      userId:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
+      password:new FormControl('',[Validators.pattern("[]"),Validators.required]),
+      roleId:new FormControl('',[Validators.pattern("[]"),Validators.required])
     }
   )
 
@@ -29,17 +29,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  get  UserEmail()
+  get  userId()
   {
-    return this.userlogin.get("UserEmail")
+    return this.userlogin.get("userId")
   }
-  get Userpassword()
+  get password()
   {
-    return this.userlogin.get("Userpassword")
+    return this.userlogin.get("password")
   }
-  get UserRole()
+  get roleId()
   {
-    return this.userlogin.get("UserRole")
+    return this.userlogin.get("roleId")
   }
 
 }

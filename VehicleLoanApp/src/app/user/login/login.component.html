@@ -17,11 +17,11 @@
             <div class="form-group mb-4"><label for="form1Example4" class="form-label">Role Type</label><br>
                 <!-- Roletype input -->
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="UserRole" id="inlineRadio1" value="101" formControlName="UserRole">
+                    <input class="form-check-input" type="radio" name="roleId" id="inlineRadio1" value="101" formControlName="roleId">
                     <label class="form-check-label" for="inlineRadio1">User</label>
                   </div>
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="UserRole" id="inlineRadio2" value="102" formControlName="UserRole">
+                    <input class="form-check-input" type="radio" name="roleId" id="inlineRadio2" value="100" formControlName="roleId">
                     <label class="form-check-label" for="inlineRadio2">Admin</label>
                   </div>
                   <div>
@@ -30,12 +30,12 @@
              <div class="form-group mb-4"><label for="form1Example1"
                  class="form-label">Email address</label>
                  <!-- Email input -->
-                 <input type="email" id="form1Example1" name="UserEmail" formControlName="UserEmail" class="form-control "></div>
-                 <div *ngIf="! UserEmail?.valid && ( UserEmail?.dirty ||  UserEmail?.touched)" class="error text-danger" role="alert">
-                   <div *ngIf=" UserEmail?.errors?.['required']"><!--here the name firstname is from get method that is inside the ts file-->
+                 <input type="email" id="form1Example1" name="userId" formControlName="userId" class="form-control "></div>
+                 <div *ngIf="! userId?.valid && ( userId?.dirty ||  userId?.touched)" class="error text-danger" role="alert">
+                   <div *ngIf=" userId?.errors?.['required']"><!--here the name firstname is from get method that is inside the ts file-->
                      User Name is required
                    </div>
-                   <div *ngIf=" UserEmail?.errors?.['pattern']" class="error text-danger" role="alert">
+                   <div *ngIf=" userId?.errors?.['pattern']" class="error text-danger" role="alert">
                        Username unacceptable
                      </div>
                    </div>
@@ -44,9 +44,9 @@
                  class="form-label">Password</label>
                  <!-- Password input -->
                  <input  type="password" id="form1Example2"
-                 name="Userpassword" formControlName="Userpassword" class="form-control "></div>
-                 <div *ngIf="!Userpassword?.valid && (Userpassword?.dirty ||Userpassword?.touched)" class="error text-danger" role="alert">
-                   <div *ngIf="Userpassword?.errors?.['required']"><!--here the name firstname is from get method that is inside the ts file-->
+                 name="password" formControlName="password" class="form-control "></div>
+                 <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)" class="error text-danger" role="alert">
+                   <div *ngIf="password?.errors?.['required']"><!--here the name firstname is from get method that is inside the ts file-->
                      Password required
                    </div>
                    </div>
@@ -63,7 +63,7 @@
              
             </div>
 
-             <button  type="submit" class="btn btn-danger btn-block text-center signin" >Login</button>
+             <button type="submit" class="btn btn-danger btn-block text-center signin" >Login</button>
              
            </form>
          </div>
@@ -77,5 +77,4 @@
     <a href="#carrier">Carrier</a>
     <br>  <br>
      <p>@vehicleloan, Some rights reserved</p>
- 
   </footer>
