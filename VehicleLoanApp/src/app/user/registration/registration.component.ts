@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl, PatternValidator, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl,FormGroup,Validators } from "@angular/forms";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class LoginComponent implements OnInit {
+export class RegistrationComponent implements OnInit {
+  
 
   InUse!:boolean
-  userlogin:FormGroup = new FormGroup(
+  registration:FormGroup = new FormGroup(
     {
       UserEmail:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
       Userpassword:new FormControl('',[Validators.pattern("[]"),Validators.required]),
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
   Usercredentials()
   {
      
-     console.log(this.userlogin.value)
+     console.log(this.registration.value)
   }
 
 
@@ -31,15 +32,18 @@ export class LoginComponent implements OnInit {
   }
   get  UserEmail()
   {
-    return this.userlogin.get("UserEmail")
+    return this.registration.get("UserEmail")
   }
   get Userpassword()
   {
-    return this.userlogin.get("Userpassword")
+    return this.registration.get("Userpassword")
   }
   get UserRole()
   {
-    return this.userlogin.get("UserRole")
+    return this.registration.get("UserRole")
   }
+
+  
+
 
 }

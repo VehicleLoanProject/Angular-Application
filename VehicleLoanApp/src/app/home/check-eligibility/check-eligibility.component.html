@@ -13,7 +13,7 @@
     <label >Salaried</label>
     <input type="radio" name="femployement" value="Self-Employed" id="Self-Employed" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
     <label >Self-Employed</label>
-    <input type="radio" name="employement" value="None" id="None" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="femployement" value="None" id="None" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
     <label >None</label><br>
     <br>
     <br>
@@ -26,10 +26,10 @@
     <label for="fresidenceDuration">Duration (Month) of Stay in Current Residence </label><br>
     <input type="number" id="fresidenceDuration" name="fresidenceDuration" ngModel required #fresidenceDuration="ngModel"><br>
     <br>
-    ,<button type="submit" (click)="checkyoureligibility()">Check Eligibilty</button>
+    <button type="submit" (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
   </form>
 </body>
-<p>{{result}}</p>
+<p class="result">{{result}}</p>
 
 
   <footer class="footer">

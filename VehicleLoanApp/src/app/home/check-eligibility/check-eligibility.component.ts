@@ -21,10 +21,12 @@ export class CheckEligibilityComponent implements OnInit {
   checkeligibility(data:FormData)
   {
     console.log(data);
+
   }
-  checkyoureligibility()
+  checkyoureligibility(data:any)
   {
-    if(this.fage>=18 && this.fage<=65 && this.fincome>=300000 && this.femployent!="None" && this.fresidenceDuration>=12)
+    //if((this.fage>=18 && this.fage<=65) && this.fincome>=300000 && this.femployent!=="None" && this.fresidenceDuration>=12)
+    if(data["fage"]>=18 && data["fage"]<=65 && data["fincome"]>=300000 && data["femployent"]!="None"  && data["fresidenceDuration"]>=12 )
     {
         this.result="Congratulations... You Are Eligible for Car Loan";
     }

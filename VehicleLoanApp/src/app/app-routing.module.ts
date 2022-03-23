@@ -6,6 +6,7 @@ import { CheckEligibilityComponent } from "./home/check-eligibility/check-eligib
 import { ApplicationComponent } from './user/application/application.component';
 import { CustomerapplicationComponent } from './admin/customerapplication/customerapplication.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
+import { RegistrationComponent } from './user/registration/registration.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'customerApplication',
     component:CustomerapplicationComponent
+  
+  },
+  {
+    path: 'registration',
+    component:RegistrationComponent
   
   },
   {

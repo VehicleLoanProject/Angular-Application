@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule,FormsModule } from "@angular/forms";
 import { ApplicationComponent } from './application/application.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
@@ -12,7 +13,8 @@ import { VehicleComponent } from './vehicle/vehicle.component';
   declarations: [
     LoginComponent,
     ApplicationComponent,
-    VehicleComponent
+    VehicleComponent,
+    RegistrationComponent
   ],
   imports: [
     CommonModule,ReactiveFormsModule,FormsModule

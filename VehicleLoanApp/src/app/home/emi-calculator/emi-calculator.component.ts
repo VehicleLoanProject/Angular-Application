@@ -29,8 +29,8 @@ export class EmiCalculatorComponent  {
     this.bottom=this.top-1;
     this.sp=this.top/this.bottom;
     this.emi=((this.amount * this.mir) * this.sp);
-    this.tip=this.emi+this.time;
-    this.tp=this.tip+this.amount;
+    this.tip=this.emi*this.time;
+    this.tp=this.tip-this.amount;
 
   }
 
