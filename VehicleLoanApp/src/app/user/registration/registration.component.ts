@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import {RegistrationService} from '../services/registration.service';
 
 @Component({
   selector: 'app-registration',
@@ -22,12 +23,13 @@ export class RegistrationComponent implements OnInit {
   Usercredentials()
   {
      
-     console.log(this.registration.value)
+     console.log(this.registration.value);
+     this._rs.addUserRecord(this.registration.value);
      
   }
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private _rs:RegistrationService) { }
 
   ngOnInit(): void {
   }

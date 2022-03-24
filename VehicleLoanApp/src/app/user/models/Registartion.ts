@@ -1,5 +1,5 @@
-export default class Registration {
-    UserEmail:string=" "
-    UserRole:number=0;
-    Userpassword:string=" "
+export interface Registration {
+    UserEmail:string;
+    UserRole:number;
+    Userpassword:string;
   }
