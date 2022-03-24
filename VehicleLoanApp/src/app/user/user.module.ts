@@ -5,8 +5,7 @@ import { ReactiveFormsModule,FormsModule } from "@angular/forms";
 import { ApplicationComponent } from './application/application.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { RegistrationComponent } from './registration/registration.component';
-
-
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -17,7 +16,7 @@ import { RegistrationComponent } from './registration/registration.component';
     RegistrationComponent
   ],
   imports: [
-    CommonModule,ReactiveFormsModule,FormsModule
+    CommonModule,ReactiveFormsModule,FormsModule,AppRoutingModule
   ],
   exports:[LoginComponent,ApplicationComponent]
 })

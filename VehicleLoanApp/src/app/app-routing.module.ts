@@ -40,9 +40,8 @@ const routes: Routes = [
     path:'homepage',component:HomepageComponent
   },
   {
-    path:'',component:HomepageComponent,pathMatch:"full"
+    path:'',redirectTo : 'homepage',pathMatch:"full"
   }
-
 ];
 
 @NgModule({

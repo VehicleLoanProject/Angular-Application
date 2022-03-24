@@ -23,6 +23,7 @@ export class RegistrationComponent implements OnInit {
   {
      
      console.log(this.registration.value)
+     
   }
 
 
