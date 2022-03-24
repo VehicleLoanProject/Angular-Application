@@ -10,6 +10,9 @@ import { RegistrationComponent } from './user/registration/registration.componen
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
 import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
 import { VehicleComponent } from './user/vehicle/vehicle.component';
+import { RejectedListComponent } from './admin/rejected-list/rejected-list/rejected-list.component';
+import { NewApplicationsComponent } from './admin/new-applications/new-application/new-application.component';
+import { ClientListComponent } from './admin/client-list/client-list/client-list.component';
 
 const routes: Routes = [
   {
@@ -35,8 +38,24 @@ const routes: Routes = [
   
   },
   {
+    path: 'clintlist',
+    component:ClientListComponent
+  
+  },
+  
+  {
     path: 'registration',
     component:RegistrationComponent
+  
+  },
+  {
+    path: 'adminrejectedlist',
+    component:RejectedListComponent
+  
+  },
+  {
+    path: 'newapplication',
+    component:NewApplicationsComponent
   
   },
   {
