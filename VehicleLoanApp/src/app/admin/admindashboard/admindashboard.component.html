@@ -5,10 +5,10 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Admin Dashboard</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Dashboard</a>
-      <a mat-list-item href="/clintlist">Clients</a>
-      <a mat-list-item href="/newapplication">Applications</a>
-      <a mat-list-item href="/adminrejectedlist">RejectedList</a>
+      <a mat-list-item routerLink="#">Dashboard</a>
+      <a mat-list-item routerLink="/clintlist">Clients</a>
+      <a mat-list-item routerLink="/newapplication">Applications</a>
+      <a mat-list-item routerLink="/adminrejectedlist">RejectedList</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

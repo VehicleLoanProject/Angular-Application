@@ -83,12 +83,13 @@ footer {
     height: 10px;
     background-color: #04AA6D;
   }
-  body  
+  .body  
   {  
     margin: 0;  
     padding: 0;  
     background-color:white;  
-    font-family: 'Arial';  
+    font-family: 'Arial'; 
+    text-align: left;
   }  
   button
   {
@@ -103,7 +104,25 @@ footer {
     background-color: blanchedalmond;
 
   }
+  .home{
+    color: black;
+    margin-top: -300pxpx;
+    box-sizing: border-box;
+    border-radius: 10px;
+    
+    
+
+  }
+  .home2
+  {
+    color: black;
+    margin-top: -150px;
+    
   
+    box-sizing: border-box;
+    border-radius: 10px;
+
+  }
 
 
   

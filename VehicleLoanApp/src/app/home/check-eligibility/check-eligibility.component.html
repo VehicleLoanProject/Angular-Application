@@ -11,7 +11,7 @@
 <body class="body">
   <form #eligibilityForm="ngForm" (ngSubmit)="checkeligibility(eligibilityForm.value)">
     
-    <label for="fage"> Age of the Applicant</label><br>
+    <label for="fage"> Age of the Applicant: </label><br>
     <input type="number" id="fage" name="fage" ngModel required #fage="ngModel">
     <span class="text-danger"
     *ngIf="(fage.touched || eligibilityForm.submitted) && fage.errors?.['required']">
@@ -23,7 +23,7 @@
     *ngIf="(fincome.touched || eligibilityForm.submitted) && fincome.errors?.['required']">
     Income is required </span>
     <br>
-    <label for="femployent"> Type of Employment</label><br>
+    <label for="femployent"> Type of Employment: </label><br>
     <input type="radio" name="femployent" value="Salaried" id="Salaried" [(ngModel)]='femployent'> &nbsp;&nbsp;&nbsp;&nbsp;
     <label >Salaried</label> <br> 
     <input type="radio" name="femployent" value="Self-Employed" id="Self-Employed" [(ngModel)]='femployent'> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -32,18 +32,18 @@
     <label >None</label><br>
     <br>
     <br>
-    <label for="recidence" >Country</label><br>
+    <label for="recidence" >Country: </label><br>
     <input  type="radio" name="recidence" value="India" id="India" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
     <label >India</label> <br> 
     <input type="radio" name="recidence" value="Other" id="Other" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
     <label >Other</label>
     <br><br>
-    <label for="fresidenceDuration">Duration (Month) of Stay in Current Residence </label><br>
+    <label for="fresidenceDuration">Duration (Month) of Stay in Current Residence:  </label><br>
     <input type="number" id="fresidenceDuration" name="fresidenceDuration" ngModel required #fresidenceDuration="ngModel">
     <span class="text-danger"
     *ngIf="(fresidenceDuration.touched || eligibilityForm.submitted) && fresidenceDuration.errors?.['required']">
     No Of Months are required </span><br><br>
-    <button type="submit" [disabled] (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
+    <button class="home2 " type="submit" [disabled] (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
   </form>
 </body>
 <p routerLink="/login" class="result">{{result}}</p>

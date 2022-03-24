@@ -12,10 +12,13 @@ import { NewApplicationsComponent } from './new-applications/new-application/new
     CustomerapplicationComponent,
     ClientListComponent,
     RejectedListComponent,
-    NewApplicationsComponent
+    NewApplicationsComponent,
+    
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[]
+
 })
 export class AdminModule { }
