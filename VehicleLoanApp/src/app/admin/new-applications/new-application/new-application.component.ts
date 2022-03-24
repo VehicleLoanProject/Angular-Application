@@ -6,8 +6,8 @@ import {allApplicationDetails} from '../../Models/newApplicationModel'
 
 @Component({
   selector: 'app-new-applications',
-  templateUrl: './new-applications.component.html',
-  styleUrls: ['./new-applications.component.css']
+  templateUrl: './new-application.component.html',
+  styleUrls: ['./new-application.component.css']
 })
 export class NewApplicationsComponent implements OnInit {
 
