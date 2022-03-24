@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  result:string="";
+  orresult:string="";
   InUse!:boolean
   userlogin:FormGroup = new FormGroup(
     {
@@ -18,10 +19,17 @@ export class LoginComponent implements OnInit {
     }
   )
 
-  Usercredentials()
+  Usercredentials(data:any)
   {
      
      console.log(this.userlogin.value)
+     if(data["roleId"]==100)
+     {
+       this.result="[GO TO ADMIN-DASHBOARD]"
+     }
+     else
+     this.orresult="[GO TO USER-DASHBOARD]"
+
   }
 
 

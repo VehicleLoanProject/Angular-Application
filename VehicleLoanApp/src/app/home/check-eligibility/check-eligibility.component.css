@@ -33,7 +33,7 @@ input[type=text]:focus {
     text-align: center;
     
   }
-  header {
+  .header {
     background-color: #666;
     padding: 30px;
     text-align: center;
@@ -97,12 +97,13 @@ footer {
   background-color: #04AA6D;
   }
   .result{
-    margin-top: 20px;
+    margin-top: 0px;
     margin-right: 300px;
     font-size: 30px;
     background-color: blanchedalmond;
 
   }
+  
 
 
   

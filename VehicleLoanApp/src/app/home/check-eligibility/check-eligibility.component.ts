@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { NgForm,FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-check-eligibility',
@@ -14,6 +15,7 @@ export class CheckEligibilityComponent implements OnInit {
   fplaceOfResidence:string=" "
   fresidenceDuration:number=0;
   result:string=" ";
+  orresult:string=" ";
   constructor() { }
 
   ngOnInit(): void {
@@ -28,10 +30,10 @@ export class CheckEligibilityComponent implements OnInit {
     //if((this.fage>=18 && this.fage<=65) && this.fincome>=300000 && this.femployent!=="None" && this.fresidenceDuration>=12)
     if(data["fage"]>=18 && data["fage"]<=65 && data["fincome"]>=300000 && data["femployent"]!="None"  && data["fresidenceDuration"]>=12 )
     {
-        this.result="Congratulations... You Are Eligible for Car Loan";
+        this.result="Congratulations... You Are Eligible for Car Loan------>[YOU CAN APPLY]";
     }
     else
-    this.result="Sorry... You Are Not Eligible for Car Loan"
+    this.orresult="Sorry... You Are Not Eligible for Car Loan ----->[HOME]"
 
   }
 }

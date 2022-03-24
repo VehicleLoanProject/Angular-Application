@@ -13,7 +13,7 @@
          <hr><br>
          <div  class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 loginbox">
          
-           <form [formGroup]="userlogin" (ngSubmit)="Usercredentials()">
+           <form [formGroup]="userlogin" (ngSubmit)="Usercredentials(userlogin.value)">
             <div class="form-group mb-4"><label for="form1Example4" class="form-label">Role Type</label><br>
                 <!-- Roletype input -->
                 <div class="form-check form-check-inline">
@@ -64,6 +64,8 @@
             </div>
 
              <button type="submit" class="btn btn-danger btn-block text-center signin" >Login</button>
+             <nav routerLink="/admindashboard">{{result}}</nav>
+             <nav routerLink="/userdashboard">{{orresult}}</nav>
            </form><br>Don't you have an account please register here<br>
            <button type="button" class="btn btn-danger btn-block text-center signin" routerLink = "registration">Register</button>
          </div>

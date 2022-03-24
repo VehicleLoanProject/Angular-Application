@@ -1,23 +1,20 @@
-<p>vehicle works!</p>
-<div class="applicationform">Vehicle Details</div>
-    <div>Your CustomerID is {{CustomerID}}</div>
+<header class="header1">
+    <h2>VEHICLE LOAN</h2>
+  </header>
+<div class="applicationform"><h2>Vehicle Details</h2></div>
+    <div>Your CustomerID:         {{CustomerID}}</div>
         <form #vehicleForm="ngForm" (ngSubmit)="vehicleDataSubmit(vehicleForm.value)">
-        <label for="CarMake"> Car Make : </label>
-        <input type="text" name="CarMake" id="CarMake" ngModel><br>
-        <label for="CarModel"> Car Model: </label>
-        <input type="text" name="CarModel" id="CarModel" ngModel><br>
-        <label for="ExshowroomPrice">Ex-Showroom Price : </label>
-        <input type="number" name="ExshowroomPrice" id="ExshowroomPrice" ngModel><br>
-        <label for="OnroadPrice">On-Road Price : </label>
-        <input type="number" name="OnroadPrice" id="OnroadPrice" ngModel><br>
-        <div class="applicationform">Loan Details</div>
-        <label for="OnroadPrice">On-Road Price : </label>
-        <input type="number" name="OnroadPrice" id="OnroadPrice" ngModel><br>
-        <label for="OnroadPrice">On-Road Price : </label>
-        <input type="number" name="OnroadPrice" id="OnroadPrice" ngModel><br>
-        <label for="CustomerID">Customer ID : </label>
-        <input type="number" name="CustomerID" id="CustomerID" ngModel><br>
-        <button type="submit">Next</button>
+            <label   class="form-label" for="CarMake">CarMake: </label>
+            <input class="form-control" type="text" name="CarMake" id="CarMake" ngModel>
+            <label   class="form-label" for="CarModel">CarModel: </label>
+            <input class="form-control" type="text" name="CarModel" id="CarModel" ngModel>
+            <label   class="form-label" for="ExshowroomPrice">CarModel: </label>
+            <input class="form-control" type="number" name="ExshowroomPrice" id="ExshowroomPrice" ngModel>
+            <label   class="form-label" for="OnroadPrice">On roadPrice: </label>
+            <input class="form-control" type="number" name="OnroadPrice" id="OnroadPrice" ngModel>
+            <label class="form-label" for="CustomerID">Customer ID : </label>
+            <input class="form-control"  type="number" name="CustomerID" id="CustomerID" ngModel><br>
+        <button class="btn btn-danger btn-block text-center signin" routerLink="/loandetails" type="submit">Next</button>
         </form>
         
         

@@ -1,38 +1,53 @@
-<header>
+<header class="header">
     <h2>VEHICLE LOAN</h2>
   </header>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
   <button class="home" routerLink="/homepage">HOME</button>
    <H1>Check Eligibilty</H1>
     <!--button class="home" routerLink="/homepage">HOME</button-->
-<body>
+<body class="body">
   <form #eligibilityForm="ngForm" (ngSubmit)="checkeligibility(eligibilityForm.value)">
     
     <label for="fage"> Age of the Applicant</label><br>
-    <input type="number" id="fage" name="fage" ngModel required #fage="ngModel"><br><br>
+    <input type="number" id="fage" name="fage" ngModel required #fage="ngModel">
+    <span class="text-danger"
+    *ngIf="(fage.touched || eligibilityForm.submitted) && fage.errors?.['required']">
+    Age is required </span>
+    <br>
     <label for="fincome">Annual Income:</label><br>
-    <input type="number" id="fincome" name="fincome" ngModel required #fincome="ngModel" ><br><br>
+    <input type="number" id="fincome" name="fincome" ngModel required #fincome="ngModel" >
+    <span class="text-danger"
+    *ngIf="(fincome.touched || eligibilityForm.submitted) && fincome.errors?.['required']">
+    Income is required </span>
+    <br>
     <label for="femployent"> Type of Employment</label><br>
-    <input type="radio" name="femployement" value="Salaried" id="Salaried" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
-    <label >Salaried</label>
-    <input type="radio" name="femployement" value="Self-Employed" id="Self-Employed" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
-    <label >Self-Employed</label>
-    <input type="radio" name="femployement" value="None" id="None" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="femployent" value="Salaried" id="Salaried" [(ngModel)]='femployent'> &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >Salaried</label> <br> 
+    <input type="radio" name="femployent" value="Self-Employed" id="Self-Employed" [(ngModel)]='femployent'> &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >Self-Employed</label> <br> 
+    <input type="radio" name="femployent" value="None" id="None" [(ngModel)]='femployent'>  &nbsp;&nbsp;&nbsp;&nbsp; 
     <label >None</label><br>
     <br>
     <br>
-    <label for="fplaceOfResidence" >Country</label><br>
+    <label for="recidence" >Country</label><br>
     <input  type="radio" name="recidence" value="India" id="India" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
-    <label >India</label>
-    <input type="radio" name="recidence" value="Other" id="Other" ngmodel>  &nbsp;&nbsp;&nbsp;&nbsp;
+    <label >India</label> <br> 
+    <input type="radio" name="recidence" value="Other" id="Other" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
     <label >Other</label>
     <br><br>
     <label for="fresidenceDuration">Duration (Month) of Stay in Current Residence </label><br>
-    <input type="number" id="fresidenceDuration" name="fresidenceDuration" ngModel required #fresidenceDuration="ngModel"><br>
-    <br>
-    <button type="submit" (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
+    <input type="number" id="fresidenceDuration" name="fresidenceDuration" ngModel required #fresidenceDuration="ngModel">
+    <span class="text-danger"
+    *ngIf="(fresidenceDuration.touched || eligibilityForm.submitted) && fresidenceDuration.errors?.['required']">
+    No Of Months are required </span><br><br>
+    <button type="submit" [disabled] (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
   </form>
 </body>
-<p class="result">{{result}}</p>
+<p routerLink="/login" class="result">{{result}}</p>
+<p routerLink="/homepage" class="result">{{orresult}}</p>
 
 
   <footer class="footer">

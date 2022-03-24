@@ -8,6 +8,8 @@ import { CustomerapplicationComponent } from './admin/customerapplication/custom
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
+import { UserDashboardComponent } from './user/user-dashboard/user-dashboard.component';
+import { VehicleComponent } from './user/vehicle/vehicle.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,15 @@ const routes: Routes = [
     path: 'registration',
     component:RegistrationComponent
   
+  },
+  {
+    path: 'vehicle',
+    component:VehicleComponent
+  
+  },
+  {
+    path: 'userdashboard',
+    component:UserDashboardComponent
   },
   {
     path:'homepage',component:HomepageComponent
