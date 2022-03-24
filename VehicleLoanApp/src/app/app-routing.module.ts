@@ -7,6 +7,7 @@ import { ApplicationComponent } from './user/application/application.component';
 import { CustomerapplicationComponent } from './admin/customerapplication/customerapplication.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,9 @@ const routes: Routes = [
   },
   {
     path:'',redirectTo : 'homepage',pathMatch:"full"
+  },
+  {
+    path:'admindashboard', component:AdmindashboardComponent
   }
 ];
 
