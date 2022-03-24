@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CustomerapplicationComponent } from './customerapplication/customerapplication.component';
 import { ClientListComponent } from './client-list/client-list/client-list.component';
 import { RejectedListComponent } from './rejected-list/rejected-list/rejected-list.component';
-import { NewApplicationComponent } from './new-applications/new-application/new-application.component';
+import { NewApplicationsComponent } from './new-applications/new-application/new-application.component';
 
 
 
@@ -12,7 +12,7 @@ import { NewApplicationComponent } from './new-applications/new-application/new-
     CustomerapplicationComponent,
     ClientListComponent,
     RejectedListComponent,
-    NewApplicationComponent
+    NewApplicationsComponent
   ],
   imports: [
     CommonModule
