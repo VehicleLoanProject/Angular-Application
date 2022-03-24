@@ -1,1 +1,17 @@
-<p>rejected-list works!</p>
+<table *ngIf = "applicants && applicants.length > 0">
+    <tbody>
+        <td>Customer Id</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Contact No</td>
+        <td>Email Id</td>
+    </tbody>
+    <tbody *ngFor = "let i of applicants">
+        <td>{{i.customerId}}</td>
+        <td>{{i.firstName}}</td>
+        <td>{{i.lastName}}</td>
+        <td>{{i.contactNo}}</td>
+        <td>{{i.emailId}}</td>
+    </tbody>
+</table>
+

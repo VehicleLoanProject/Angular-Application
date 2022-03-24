@@ -1,1 +1,19 @@
-<p>new-application works!</p>
+<table *ngIf = "applications && applications.length > 0">
+    <thead>
+            <td>Customer Id</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+    </thead>
+    <tbody *ngFor = "let i of applications">
+        <tr>
+        <td>{{i.customerId}}</td>
+        <td>{{i.firstName}}</td>
+        <td>{{i.lastName}}</td>
+        <td>{{i.emailId}}</td>
+    </tr>
+
+    </tbody>
+</table>
+
+
