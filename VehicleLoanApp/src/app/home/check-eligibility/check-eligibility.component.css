@@ -1,3 +1,12 @@
+.home {
+  background-color: rgba(0, 0, 255, 0.61);
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 input[type=text]:focus {
     border: 3px solid #555;
   }

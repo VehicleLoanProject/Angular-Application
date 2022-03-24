@@ -1,9 +1,12 @@
 <header>
     <h2>VEHICLE LOAN</h2>
   </header>
-    <H1>Check Eligibilty</H1>
+  <button class="home" routerLink="/homepage">HOME</button>
+   <H1>Check Eligibilty</H1>
+    <!--button class="home" routerLink="/homepage">HOME</button-->
 <body>
   <form #eligibilityForm="ngForm" (ngSubmit)="checkeligibility(eligibilityForm.value)">
+    
     <label for="fage"> Age of the Applicant</label><br>
     <input type="number" id="fage" name="fage" ngModel required #fage="ngModel"><br><br>
     <label for="fincome">Annual Income:</label><br>
