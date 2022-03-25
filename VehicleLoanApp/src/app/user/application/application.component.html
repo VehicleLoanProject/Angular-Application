@@ -9,37 +9,82 @@
         <form class="Form" #applicationForm="ngForm" (ngSubmit)="application(applicationForm.value)">
             <div ><h2>Personal Details</h2></div>
             <label   class="form-label" for="AppliedOn">Date of Application: </label>
-            <input class="form-control" type="date" name="AppliedOn" id="FirstName" ngModel>
+            <input class="form-control" type="date" name="AppliedOn" id="FirstName" ngModel required #AppliedOn="ngModel">
+            <span class="text-danger"
+                *ngIf="(AppliedOn.touched || applicationForm.submitted) && AppliedOn.errors?.['required']">
+                Applied On is required </span>
             <label   class="form-label" for="FirstName">First Name: </label>
-            <input class="form-control" type="text" name="FirstName" id="FirstName" ngModel>
+            <input class="form-control" type="text" name="FirstName" id="FirstName" ngModel required #FirstName="ngModel">
+            <span class="text-danger"
+            *ngIf="(FirstName.touched || applicationForm.submitted) && FirstName.errors?.['required']">
+            First Name is required </span>
             <label   class="form-label" for="MiddleName">Middle Name: </label>
-            <input class="form-control"  type="text" name="MiddleName" id="MiddleName" ngModel><br>
+            <input class="form-control"  type="text" name="MiddleName" id="MiddleName" ngModel ><br>
             <label   class="form-label" for="LastName">Last Name: </label>
-            <input class="form-control"  type="text" name="LastName" id="LastName" ngModel><br>
+            <input class="form-control"  type="text" name="LastName" id="LastName" ngModel required #LastName="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(LastName.touched || applicationForm.submitted) && LastName.errors?.['required']">
+            LastName is required </span>
             <label   class="form-label" for="Age">Age: </label>
-            <input class="form-control"  type="number" name="Age" id="Age" ngModel><br>
+            <input class="form-control"  type="number" name="Age" id="Age" ngModel required #Age="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(Age.touched || applicationForm.submitted) && Age.errors?.['required']">
+            Age is required </span>
             <label   class="form-label" for="Gender">Gender: </label>
-            <input class="form-control"  type="text" name="Gender" id="Gender" ngModel><br>
+            <input class="form-control"  type="text" name="Gender" id="Gender" ngModel required #Gender="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(Gender.touched || applicationForm.submitted) && Gender.errors?.['required']">
+            Gender is required </span>
             <label  class="form-label" for="ContactNo">Contact Number: </label>
-            <input class="form-control"  type="number" name="ContactNo" id="ContactNo" ngModel><br>
+            <input class="form-control"  type="number" name="ContactNo" id="ContactNo" ngModel required #ContactNo="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(ContactNo.touched || applicationForm.submitted) && ContactNo.errors?.['required']">
+            ContactNo is required </span>
             <label  class="form-label" for="EmailId">EmailId : </label>
-            <input class="form-control"  type="email" name="EmailId" id="EmailId" ngModel><br>
+            <input class="form-control"  type="email" name="EmailId" id="EmailId" ngModel required #EmailId="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(AppliedOn.touched || applicationForm.submitted) && EmailId.errors?.['required']">
+            EmailId is required </span>
             <label   class="form-label" for="Address">Address : </label>
-            <input class="form-control"  type="text" name="Address" id="Address" ngModel><br>
+            <input class="form-control"  type="text" name="Address" id="Address" ngModel required #Address="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(Address.touched || applicationForm.submitted) && Address.errors?.['required']">
+            Address is required </span>
             <label   class="form-label" for="State">State : </label>
-            <input class="form-control"  type="text" name="State" id="State" ngModel><br>
+            <input class="form-control"  type="text" name="State" id="State" ngModel required #State="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(State.touched || applicationForm.submitted) && State.errors?.['required']">
+            State is required </span>
             <label   class="form-label" for="City">City : </label>
-            <input class="form-control"  type="text" name="City" id="City" ngModel><br>
+            <input class="form-control"  type="text" name="City" id="City" ngModel required #City="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(City.touched || applicationForm.submitted) && City.errors?.['required']">
+            City is required </span>
             <label  class="form-label" for="Pincode">Pincode : </label>
-            <input class="form-control"  type="number" name="Pincode" id="Pincode" ngModel><br>
+            <input class="form-control"  type="number" name="Pincode" id="Pincode" ngModel required #Pincode="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(Pincode.touched || applicationForm.submitted) && Pincode.errors?.['required']">
+            Pincode is required </span>
             <label   class="form-label" for="TypeOfEmployement">Employement Type(Salaried Or Self-Employement) : </label>
-            <input class="form-control"  type="text" name="TypeOfEmployement" id="TypeOfEmployement" ngModel><br>
+            <input class="form-control"  type="text" name="TypeOfEmployement" id="TypeOfEmployement" ngModel required #TypeOfEmployement="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(TypeOfEmployement.touched || applicationForm.submitted) && TypeOfEmployement.errors?.['required']">
+            Employement is required </span>
             <label   class="form-label" for="YearlySalary">Yearly Salary : </label>
-            <input class="form-control"  type="number" name="YearlySalary" id="YearlySalary" ngModel><br>
+            <input class="form-control"  type="number" name="YearlySalary" id="YearlySalary" ngModel required #YearlySalary="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(YearlySalary.touched || applicationForm.submitted) && YearlySalary.errors?.['required']">
+            Yearly Salary is required </span>
             <label   class="form-label" for="ExistingEmi"> Existing EMI : </label>
-            <input class="form-control"  type="number" name="ExistingEmi" id="ExistingEmi" ngModel><br>
+            <input class="form-control"  type="number" name="ExistingEmi" id="ExistingEmi" ngModel required #ExistingEmi="ngModel" ><br>
+            <span class="text-danger"
+            *ngIf="(ExistingEmi.touched || applicationForm.submitted) && ExistingEmi.errors?.['required']">
+            Existing Emi is required  (if not mention 0(zero) ) </span>
             <label   class="form-label" for="UserId"> User ID : </label>
-            <input class="form-control"  type="email" name="UserId" id="UserId" ngModel><br>
+            <input class="form-control"  type="email" name="UserId" id="UserId" ngModel required #UserId="ngModel"><br>
+            <span class="text-danger"
+            *ngIf="(UserId.touched || applicationForm.submitted) && UserId.errors?.['required']">
+            UserId Is Required</span>
     
             <button routerLink="/vehicle" class="btn btn-danger btn-block text-center signin"  type="submit">Next</button>
             

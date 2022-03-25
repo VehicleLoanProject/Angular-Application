@@ -13,6 +13,7 @@ import { VehicleComponent } from './user/vehicle/vehicle.component';
 import { RejectedListComponent } from './admin/rejected-list/rejected-list/rejected-list.component';
 import { NewApplicationsComponent } from './admin/new-applications/new-application/new-application.component';
 import { ClientListComponent } from './admin/client-list/client-list/client-list.component';
+import { LoanDetailsComponent } from './user/loan-details/loan-details.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,11 @@ const routes: Routes = [
   {
     path: 'clintlist',
     component:ClientListComponent
+  
+  },
+  {
+    path: 'loandetails',
+    component:LoanDetailsComponent
   
   },
   

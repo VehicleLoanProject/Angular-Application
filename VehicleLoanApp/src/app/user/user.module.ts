@@ -8,6 +8,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { RegistrationService } from "../user/services/registration.service";
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { RegistrationService } from "../user/services/registration.service";
     ApplicationComponent,
     VehicleComponent,
     RegistrationComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    LoanDetailsComponent
   ],
   imports: [
     CommonModule,ReactiveFormsModule,FormsModule,AppRoutingModule

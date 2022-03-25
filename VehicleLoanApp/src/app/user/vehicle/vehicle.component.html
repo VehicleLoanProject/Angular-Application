@@ -2,18 +2,33 @@
     <h2>VEHICLE LOAN</h2>
   </header>
 <div class="applicationform"><h2>Vehicle Details</h2></div>
-    <div>Your CustomerID:         {{CustomerID}}</div>
+
         <form #vehicleForm="ngForm" (ngSubmit)="vehicleDataSubmit(vehicleForm.value)">
             <label   class="form-label" for="CarMake">CarMake: </label>
-            <input class="form-control" type="text" name="CarMake" id="CarMake" ngModel>
+            <input class="form-control" type="text" name="CarMake" id="CarMake" ngModel required #CarMake="ngModel">
+            <span class="text-danger"
+                *ngIf="(CarMake.touched || vehicleForm.submitted) && CarMake.errors?.['required']">
+                CarMake is required </span>
             <label   class="form-label" for="CarModel">CarModel: </label>
-            <input class="form-control" type="text" name="CarModel" id="CarModel" ngModel>
-            <label   class="form-label" for="ExshowroomPrice">CarModel: </label>
-            <input class="form-control" type="number" name="ExshowroomPrice" id="ExshowroomPrice" ngModel>
+            <input class="form-control" type="text" name="CarModel" id="CarModel" ngModel required #CarModel="ngModel">
+            <span class="text-danger"
+                *ngIf="(CarModel.touched || vehicleForm.submitted) && CarModel.errors?.['required']">
+                CarModel is required </span>
+            <label   class="form-label" for="ExshowroomPrice">Exshowroom Price: </label>
+            <input class="form-control" type="number" name="ExshowroomPrice" id="ExshowroomPrice" ngModel required #ExshowroomPrice="ngModel">
+            <span class="text-danger"
+                *ngIf="(ExshowroomPrice.touched || vehicleForm.submitted) && ExshowroomPrice.errors?.['required']">
+                Exshowroom Price is required </span>
             <label   class="form-label" for="OnroadPrice">On roadPrice: </label>
-            <input class="form-control" type="number" name="OnroadPrice" id="OnroadPrice" ngModel>
+            <input class="form-control" type="number" name="OnroadPrice" id="OnroadPrice" ngModel required #OnroadPrice="ngModel">
+            <span class="text-danger"
+                *ngIf="(OnroadPrice.touched || vehicleForm.submitted) && OnroadPrice.errors?.['required']">
+                Onroad Price is required </span>
             <label class="form-label" for="CustomerID">Customer ID : </label>
-            <input class="form-control"  type="number" name="CustomerID" id="CustomerID" ngModel><br>
+            <input class="form-control"  type="number" name="CustomerID" id="CustomerID" ngModel required #CustomerID="ngModel"><br>
+            <span class="text-danger"
+                *ngIf="(CustomerID.touched || vehicleForm.submitted) && CustomerID.errors?.['required']">
+                CustomerID is required </span>
         <button class="btn btn-danger btn-block text-center signin" routerLink="/loandetails" type="submit">Next</button>
         </form>
         

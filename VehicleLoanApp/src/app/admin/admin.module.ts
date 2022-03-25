@@ -18,7 +18,7 @@ import { NewApplicationsComponent } from './new-applications/new-application/new
   imports: [
     CommonModule
   ],
-  exports:[]
+  exports:[RejectedListComponent,NewApplicationsComponent,CustomerapplicationComponent]
 
 })
 export class AdminModule { }
