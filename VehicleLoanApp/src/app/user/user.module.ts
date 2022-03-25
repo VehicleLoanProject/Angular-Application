@@ -7,6 +7,7 @@ import { VehicleComponent } from './vehicle/vehicle.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { RegistrationService } from "../user/services/registration.service";
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
   imports: [
     CommonModule,ReactiveFormsModule,FormsModule,AppRoutingModule
   ],
-  exports:[LoginComponent,ApplicationComponent,RegistrationComponent]
+  exports:[LoginComponent,ApplicationComponent,RegistrationComponent],
+  providers:[RegistrationService]
 })
 export class UserModule { }
