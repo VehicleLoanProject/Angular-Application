@@ -1,5 +1,5 @@
 export interface UserInfo {
-        userId:string
-        password:string
-        roleId:number
+        UserId:string
+        Password:string
+        RoleId:number
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { map, Observable } from 'rxjs';
-import {Registration} from '../models/Registartion';
+import { UserInfo } from '../models/UserInfo';
 import {ResponseModel} from '../models/response'
 
 @Injectable({
@@ -15,7 +15,7 @@ export class RegistrationService {
   constructor(private _http:HttpClient){
     console.log("Constructor created..");
   }
-  public addUserRecord(userRecord: Registration): Observable<ResponseModel> {
+  public addUserRecord(userRecord: UserInfo): Observable<ResponseModel> {
     const responseObs: Observable<any> = this._http.post(this.url, userRecord);
     return responseObs.pipe(map((resp: any) => <ResponseModel>resp))
 }

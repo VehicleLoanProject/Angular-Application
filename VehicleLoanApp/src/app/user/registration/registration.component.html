@@ -13,44 +13,57 @@
          <hr><br>
          <div  class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 loginbox">
          
-           <form [formGroup]="registration" (ngSubmit)="Usercredentials()">
+           <form [formGroup]="registration" (ngSubmit)="Usercredentials($event)">
              <div class="form-group mb-4"><label for="form1Example1"
                  class="form-label">Email address</label>
                  <!-- Email input -->
-                 <input type="email" id="form1Example1" name="UserEmail" formControlName="UserEmail" class="form-control "></div>
-                 <div *ngIf="! UserEmail?.valid && ( UserEmail?.dirty &&  UserEmail?.touched)" class="error text-danger" role="alert">
-                   <div *ngIf=" UserEmail?.errors?.['required']"><!--here the name firstname is from get method that is inside the ts file-->
-                     User Name is required
-                   </div>
-                   <div *ngIf=" UserEmail?.errors?.['pattern']" class="error text-danger" role="alert">
-                       Username unacceptable
-                     </div>
-                   </div>
+                 <input type="email" id="form1Example1" name="UserId" formControlName="UserId" class="form-control "></div>
+                  
+                 <div [hidden] = "registration.controls['UserId'].valid || registration.controls['UserId'].pristine">
+                  <div *ngIf = "registration.controls['UserId'].errors?.['required']">
+                    User Name is required
+                  </div>
+                  <div *ngIf = "registration.controls['UserId'].errors?.['email']">
+                    User Name is required
+                  </div>
+                  
+                </div>
        
              <div  class="form-group mb-4"><label  for="form1Example2"
                  class="form-label">Password</label>
                  <!-- Password input -->
                  <input  type="password" id="form1Example2"
-                 name="Userpassword" formControlName="Userpassword" class="form-control "></div>
-                 <div *ngIf="!Userpassword?.valid && (Userpassword?.dirty && Userpassword?.touched)" class="error text-danger" role="alert">
-                   <div *ngIf="Userpassword?.errors?.['required']"><!--here the name firstname is from get method that is inside the ts file-->
-                     Password required
-                   </div>
-                   </div>
+                 name="Password" formControlName="Password" class="form-control "></div>
+
+                 <div [hidden] = "registration.controls['Password'].valid || registration.controls['Password'].pristine">
+                  <div *ngIf = "registration.controls['Password'].errors?.['required']">
+                    Password required
+                  </div>
+                  <div *ngIf = "registration.controls['Password'].errors?.['max']">
+                    Length of password must be between 6 and 10.
+                  </div>
+                  <div *ngIf = "registration.controls['Password'].errors?.['min']">
+                    Length of password must be between 6 and 10.
+                  </div>
+                  
+                </div>
+
                    <div class="form-group mb-4"><label for="form1Example4" class="form-label">Role Type</label><br>
                     <!-- Roletype input -->
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="UserRole" id="inlineRadio1" value="101" formControlName="UserRole">
+                        <input class="form-check-input" type="radio" name="RoleId" id="inlineRadio1" value="101" formControlName="RoleId">
                         <label class="form-check-label" for="inlineRadio1">User</label>
                       </div>
                       
-                      <div *ngIf="! UserRole?.valid && ( UserRole?.dirty &&  UserRole?.touched)" class="error text-danger" role="alert">
-                        <div *ngIf=" UserRole?.errors?.['required']">
-                          User Role is required
+                      <div [hidden] = "registration.controls['RoleId'].valid || registration.controls['RoleId'].pristine">
+                        <div *ngIf = "registration.controls['RoleId'].errors?.['required']">
+                          Please select any role.
                         </div>
+                      </div>
                     </div>
-                    </div>
-             <button  type="submit" class="btn btn-danger btn-block text-center signin" routerLink="/login">Register</button>
+             <button  type="submit" class="btn btn-danger btn-block text-center signin" >Register</button>
+             <button  type="submit" class="btn btn-danger btn-block text-center signin" routerLink="/login" >Login</button>
+          
            </form>
          </div>
        </div>

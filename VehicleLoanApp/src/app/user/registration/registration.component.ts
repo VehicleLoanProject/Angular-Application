@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl,FormGroup,Validators } from "@angular/forms";
 import {RegistrationService} from '../services/registration.service';
 import { Router } from '@angular/router';
+import { UserInfo } from '../models/UserInfo';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-registration',
@@ -10,22 +12,40 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
   
+  UserId:string='';
+Password:string='';
+RoleId = 100;
   
   InUse!:boolean
   registration:FormGroup = new FormGroup(
     {
-      UserEmail:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
-      Userpassword:new FormControl('',[Validators.pattern("[]"),Validators.required]),
-      UserRole:new FormControl('',[Validators.pattern("[[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required])
-    }
+     
+      UserId:new FormControl('',[Validators.email,Validators.required]),
+      Password:new FormControl('',[Validators.required,Validators.max(10),Validators.min(6)]),
+      RoleId:new FormControl('',Validators.required)
+   }
   )
 
-  Usercredentials()
+  Usercredentials(event:Event)
   {
-     
+    event.preventDefault();
      console.log(this.registration.value);
-     this._rs.addUserRecord(this.registration.value);
+     const userData :UserInfo = <UserInfo>{
+       UserId : this.registration.value.UserId,
+      Password : this.registration.value.Password,
+      RoleId : Number(this.registration.value.RoleId)
+      }
+
      
+     this._rs.addUserRecord(userData)
+     .subscribe({next: (data: any)=>{
+       alert("Successfully Registered !")
+     },
+      error: (errorMessage : HttpErrorResponse) => {
+      console.log(errorMessage);
+      alert("Account Already exists,Please login")
+    },
+      complete: () => {}});
   }
 
 
