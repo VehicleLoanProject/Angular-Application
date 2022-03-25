@@ -39,7 +39,7 @@ RoleId = 100;
      
      this._rs.addUserRecord(userData)
      .subscribe({next: (data: any)=>{
-       alert("Successfully Registered !")
+       alert("Successfully Registered !, Please login")
      },
       error: (errorMessage : HttpErrorResponse) => {
       console.log(errorMessage);

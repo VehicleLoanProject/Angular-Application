@@ -21,10 +21,10 @@
                   
                  <div [hidden] = "registration.controls['UserId'].valid || registration.controls['UserId'].pristine">
                   <div *ngIf = "registration.controls['UserId'].errors?.['required']">
-                    User Name is required
+                    User Id is required
                   </div>
                   <div *ngIf = "registration.controls['UserId'].errors?.['email']">
-                    User Name is required
+                    User Id must be an email id
                   </div>
                   
                 </div>
@@ -54,10 +54,10 @@
                         <input class="form-check-input" type="radio" name="RoleId" id="inlineRadio1" value="101" formControlName="RoleId">
                         <label class="form-check-label" for="inlineRadio1">User</label>
                       </div>
-                      
+                       
                       <div [hidden] = "registration.controls['RoleId'].valid || registration.controls['RoleId'].pristine">
                         <div *ngIf = "registration.controls['RoleId'].errors?.['required']">
-                          Please select any role.
+                          Please select a role.
                         </div>
                       </div>
                     </div>
