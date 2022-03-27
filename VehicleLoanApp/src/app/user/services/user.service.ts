@@ -4,7 +4,9 @@ import { UserInfo } from '../models/UserInfo';
 import { map, Observable } from 'rxjs';
 import { TokenInfo } from '../models/TokenInfo';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class UserService {
   private url = 'http://localhost:6436/api/Login'
   constructor(private _http: HttpClient) { }

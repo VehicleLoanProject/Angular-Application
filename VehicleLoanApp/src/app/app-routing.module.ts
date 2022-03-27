@@ -14,6 +14,7 @@ import { RejectedListComponent } from './admin/rejected-list/rejected-list/rejec
 import { NewApplicationsComponent } from './admin/new-applications/new-application/new-application.component';
 import { ClientListComponent } from './admin/client-list/client-list/client-list.component';
 import { LoanDetailsComponent } from './user/loan-details/loan-details.component';
+import {AuthGuard} from './cors/auth.guard'
 
 const routes: Routes = [
   {
@@ -39,7 +40,7 @@ const routes: Routes = [
   
   },
   {
-    path: 'clintlist',
+    path: 'clientlist',
     component:ClientListComponent
   
   },
@@ -71,7 +72,7 @@ const routes: Routes = [
   },
   {
     path: 'userdashboard',
-    component:UserDashboardComponent
+    component:UserDashboardComponent, canActivate: [AuthGuard]
   },
   {
     path:'homepage',component:HomepageComponent

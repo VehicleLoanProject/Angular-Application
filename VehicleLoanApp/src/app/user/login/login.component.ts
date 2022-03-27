@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, PatternValidator, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
+import { UserInfo } from '../models/UserInfo';
+import {UserService} from '../services/user.service';
+import {TokenInfo} from '../models/TokenInfo';
 
 @Component({
   selector: 'app-login',
@@ -13,17 +16,37 @@ export class LoginComponent implements OnInit {
   InUse!:boolean
   userlogin:FormGroup = new FormGroup(
     {
-      userId:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
-      password:new FormControl('',[Validators.pattern("[]"),Validators.required]),
-      roleId:new FormControl('',[Validators.pattern("[]"),Validators.required])
+      UserId:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
+      Password:new FormControl('',[Validators.pattern("[]"),Validators.required]),
+      RoleId:new FormControl('',[Validators.pattern("[]"),Validators.required])
     }
   )
+ 
 
-  Usercredentials(data:any)
+  Usercredentials()
   {
+    const userData :UserInfo = <UserInfo>{
+      UserId : this.userlogin.value.UserId,
+     Password : this.userlogin.value.Password,
+     RoleId : Number(this.userlogin.value.RoleId)
+     } 
+    this.userSvc
+      .authenticateUser(userData)
+      .subscribe({
+        next: (data: TokenInfo) => sessionStorage.setItem('token', data.token),
+        error: (err) => console.log(err),
+        complete: () => {const snapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
+          if (snapshot.queryParams['returnUrl']) {
+            const returnUrl = snapshot.queryParams['returnUrl']
+            this.router.navigate([returnUrl])
+          } else {
+            this.router.navigate(['/userdashboard'])
+          }
+        }
+      });
      
      console.log(this.userlogin.value)
-     if(data["roleId"]==100)
+     if(userData["RoleId"]==100)
      {
        this.result="[GO TO ADMIN-DASHBOARD]"
      }
@@ -33,7 +56,9 @@ export class LoginComponent implements OnInit {
   }
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private userSvc:UserService,private  activatedRoute: ActivatedRoute) { 
+
+  }
 
   ngOnInit(): void {
   }

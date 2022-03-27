@@ -26,9 +26,8 @@ RoleId = 100;
    }
   )
 
-  Usercredentials(event:Event)
+  Usercredentials()
   {
-    event.preventDefault();
      console.log(this.registration.value);
      const userData :UserInfo = <UserInfo>{
        UserId : this.registration.value.UserId,
