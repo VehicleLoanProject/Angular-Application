@@ -15,6 +15,7 @@ import { NewApplicationsComponent } from './admin/new-applications/new-applicati
 import { ClientListComponent } from './admin/client-list/client-list/client-list.component';
 import { LoanDetailsComponent } from './user/loan-details/loan-details.component';
 import {AuthGuard} from './cors/auth.guard'
+import { AboutusComponent } from "./home/aboutus/aboutus.component";
 
 const routes: Routes = [
   {
@@ -57,7 +58,12 @@ const routes: Routes = [
   },
   {
     path: 'adminrejectedlist',
-    component:RejectedListComponent
+    component:RejectedListComponent 
+  
+  },
+  {
+    path: 'aboutus',
+    component:AboutusComponent
   
   },
   {

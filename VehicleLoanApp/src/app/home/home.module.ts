@@ -5,6 +5,7 @@ import { EmiCalculatorComponent } from './emi-calculator/emi-calculator.componen
 import { CheckEligibilityComponent } from './check-eligibility/check-eligibility.component';
 import {FormsModule  } from "@angular/forms";
 import { AppRoutingModule } from '../app-routing.module';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 
@@ -13,7 +14,8 @@ import { AppRoutingModule } from '../app-routing.module';
   declarations: [
     HomepageComponent,
     EmiCalculatorComponent,
-    CheckEligibilityComponent
+    CheckEligibilityComponent,
+    AboutusComponent
   ],
   imports: [
     CommonModule,FormsModule,AppRoutingModule
