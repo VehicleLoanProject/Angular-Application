@@ -42,3 +42,6 @@ export class VehicleComponent { //implements OnInit {
     });
 
 }
+constructor(private router:Router, private _rs:VehicleService){}
+
+}
