@@ -16,26 +16,30 @@
     <span class="text-danger"
     *ngIf="(fage.touched || eligibilityForm.submitted) && fage.errors?.['required']">
     Age is required </span>
-    <br>
+    <br><br>
     <label for="fincome">Annual Income:</label><br>
     <input type="number" id="fincome" name="fincome" ngModel required #fincome="ngModel" >
     <span class="text-danger"
     *ngIf="(fincome.touched || eligibilityForm.submitted) && fincome.errors?.['required']">
     Income is required </span>
-    <br>
-    <label for="femployent"> Type of Employment: </label><br>
-    <input type="radio" name="femployent" value="Salaried" id="Salaried" [(ngModel)]='femployent'> &nbsp;&nbsp;&nbsp;&nbsp;
+    <br><br>
+    <label for="femployent"> Type of Employment: </label><span class="text-danger"
+    *ngIf="(femployent.touched || eligibilityForm.submitted) && femployent.errors?.['required']">
+    Employement is required </span><br>
+    <input type="radio" name="femployent" value="Salaried" id="Salaried" ngModel required #femployent="ngModel"> &nbsp;&nbsp;&nbsp;&nbsp;
     <label >Salaried</label> <br> 
-    <input type="radio" name="femployent" value="Self-Employed" id="Self-Employed" [(ngModel)]='femployent'> &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="femployent" value="Self-Employed" id="Self-Employed" ngModel required #femployent="ngModel"> &nbsp;&nbsp;&nbsp;&nbsp;
     <label >Self-Employed</label> <br> 
-    <input type="radio" name="femployent" value="None" id="None" [(ngModel)]='femployent'>  &nbsp;&nbsp;&nbsp;&nbsp; 
+    <input type="radio" name="femployent" value="None" id="None" ngModel required #femployent="ngModel">  &nbsp;&nbsp;&nbsp;&nbsp; 
     <label >None</label><br>
     <br>
     <br>
-    <label for="recidence" >Country: </label><br>
-    <input  type="radio" name="recidence" value="India" id="India" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="recidence" >Country: </label><span class="text-danger"
+    *ngIf="(recidence.touched || eligibilityForm.submitted) && recidence.errors?.['required']">
+    Country is required </span><br>
+    <input  type="radio" name="recidence" value="India" id="India" ngModel required #recidence="ngModel"> &nbsp;&nbsp;&nbsp;&nbsp;
     <label >India</label> <br> 
-    <input type="radio" name="recidence" value="Other" id="Other" ngModel>  &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="recidence" value="Other" id="Other" ngModel required #recidence="ngModel">  &nbsp;&nbsp;&nbsp;&nbsp;
     <label >Other</label>
     <br><br>
     <label for="fresidenceDuration">Duration (Month) of Stay in Current Residence:  </label><br>
@@ -46,7 +50,7 @@
     <button class="home2 " type="submit" [disabled] (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
   </form>
 </body>
-<p routerLink="/login" class="result">{{result}}</p>
+<p routerLink="/login" class="result">{{result }}</p>
 <p routerLink="/homepage" class="result">{{orresult}}</p>
 
 

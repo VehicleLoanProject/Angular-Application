@@ -9,6 +9,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { RegistrationService } from "../user/services/registration.service";
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 
 
 
@@ -19,7 +20,8 @@ import { LoanDetailsComponent } from './loan-details/loan-details.component';
     VehicleComponent,
     RegistrationComponent,
     UserDashboardComponent,
-    LoanDetailsComponent
+    LoanDetailsComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     CommonModule,ReactiveFormsModule,FormsModule,AppRoutingModule
