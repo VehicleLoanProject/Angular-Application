@@ -13,7 +13,9 @@ import {TokenInfo} from '../models/TokenInfo';
 export class LoginComponent implements OnInit {
   result:string="";
   orresult:string="";
-  InUse!:boolean
+  InUse!:boolean;
+  token?:string;
+
   userlogin:FormGroup = new FormGroup(
     {
       UserId:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
@@ -33,25 +35,27 @@ export class LoginComponent implements OnInit {
     this.userSvc
       .authenticateUser(userData)
       .subscribe({
-        next: (data: TokenInfo) => sessionStorage.setItem('token', data.token),
+        next: (data: TokenInfo) =>{ 
+          sessionStorage.setItem('token', data.token)
+          this.token = data.token;},
         error: (err) => console.log(err),
-        complete: () => {const snapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
+        complete: () =>{/* const snapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
           if (snapshot.queryParams['returnUrl']) {
             const returnUrl = snapshot.queryParams['returnUrl']
             this.router.navigate([returnUrl])
           } else {
             this.router.navigate(['/userdashboard'])
-          }
+          }*/
         }
       });
      
      console.log(this.userlogin.value)
-     if(userData["RoleId"]==100)
+     if(userData["RoleId"]==100 && (this.token !=null))
      {
        this.result="[GO TO ADMIN-DASHBOARD]"
      }
-     else
-     this.orresult="[GO TO USER-DASHBOARD]"
+     else if(userData["RoleId"]==101 && (this.token !=null))
+     {this.orresult="[GO TO USER-DASHBOARD]"}
 
   }
 

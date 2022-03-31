@@ -87,7 +87,7 @@ const routes: Routes = [
     path:'',redirectTo : 'homepage',pathMatch:"full"
   },
   {
-    path:'admindashboard', component:AdmindashboardComponent
+    path:'admindashboard', component:AdmindashboardComponent, canActivate: [AuthGuard]
   }
 ];
 
