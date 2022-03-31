@@ -28,9 +28,9 @@ export class CheckEligibilityComponent implements OnInit {
   checkyoureligibility(data:any)
   {
     //if((this.fage>=18 && this.fage<=65) && this.fincome>=300000 && this.femployent!=="None" && this.fresidenceDuration>=12)
-    if(data["fage"]>=18 && data["fage"]<=65 && data["fincome"]>=300000 && data["femployent"]!="None"  && data["fresidenceDuration"]>=12 )
+    if(data["fage"]>=18 && data["fage"]<=65 && data["fincome"]>=300000 && data["femployent"]!="None"  && data["fresidenceDuration"]>=12 && data["recidence"]!="Other" )
     {
-        this.result="Congratulations... You Are Eligible for Car Loan------>[YOU CAN APPLY]";
+        this.result="Congratulations... You Are Eligible for Car Loan------>[APPLY NOW]";
     }
     else
     this.orresult="Sorry... You Are Not Eligible for Car Loan ----->[HOME]"
