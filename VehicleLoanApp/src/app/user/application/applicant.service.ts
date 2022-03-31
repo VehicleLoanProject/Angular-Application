@@ -9,7 +9,7 @@ import { applicantDetails } from "src/app/admin/Models/applicantDetails";
 })
 export class ApplicantService
 {
-    private url="http://localhost:59870/api/Applicant/AddApplicant";
+    private url="http://localhost:6436/api/Applicant/AddApplicant";
     constructor(private _http:HttpClient)
     {
 

@@ -6,7 +6,7 @@
 <h1>Application Form !</h1>
 <body class="body">
     <div>
-        <form class="Form" #applicationForm="ngForm" (ngSubmit)="application(applicationForm.value)">
+        <form class="Form" #applicationForm="ngForm" (ngSubmit)="ApplicantDetails(applicationForm.value)">
             <div ><h2>Personal Details</h2></div>
             <label   class="form-label" for="AppliedOn">Date of Application: </label>
             <input class="form-control" type="date" name="AppliedOn" id="FirstName" ngModel required #AppliedOn="ngModel">
@@ -86,7 +86,7 @@
             *ngIf="(UserId.touched || applicationForm.submitted) && UserId.errors?.['required']">
             UserId Is Required</span>
     
-            <button routerLink="/vehicle" class="btn btn-danger btn-block text-center signin"  type="submit" (click)="ApplicantDetails()">Next</button>
+            <button  class="btn btn-danger btn-block text-center signin"  type="button" >Next</button>
             
     
         </form>

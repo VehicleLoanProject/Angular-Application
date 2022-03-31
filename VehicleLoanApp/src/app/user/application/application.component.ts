@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule} from "@angular/forms";
+import { FormsModule, NgForm} from "@angular/forms";
 //import { Application } from '../models/application';
 import { Router } from '@angular/router';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
@@ -23,11 +23,11 @@ export class ApplicationComponent implements OnInit {
   {
     console.log(data)
   }
-  ApplicantDetails()
+  ApplicantDetails(applicationForm: NgForm)
   {
-    const applicantData:applicantDetails  =<applicantDetails>{
-      
-    }
+    const applicantData:applicantDetails = <applicantDetails>applicationForm.value;
+
+    console.log(applicantData);
     this._rs.ApplicantDetails(applicantData)
     .subscribe({next:(data:any) =>{
       alert("Successfully Added")

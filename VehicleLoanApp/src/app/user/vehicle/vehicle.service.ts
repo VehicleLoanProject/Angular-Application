@@ -8,7 +8,7 @@ import { ResponseModel } from "../models/response";
 })
 export class VehicleService
 {
-    private url="http://localhost:59870/api/vehicle";
+    private url="http://localhost:6436/api/vehicle";
     constructor(private _http:HttpClient)
     {
 
