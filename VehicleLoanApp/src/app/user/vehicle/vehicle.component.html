@@ -29,7 +29,7 @@
             <span class="text-danger"
                 *ngIf="(CustomerID.touched || vehicleForm.submitted) && CustomerID.errors?.['required']">
                 CustomerID is required </span>
-        <button class="btn btn-danger btn-block text-center signin" routerLink="/loandetails" type="submit" (click)="VehicleDetails()">Next</button>
+        <button class="btn btn-danger btn-block text-center signin" routerLink="/loandetails" type="button" (click)="VehicleDetails()">Next</button>
         </form>
         
         
