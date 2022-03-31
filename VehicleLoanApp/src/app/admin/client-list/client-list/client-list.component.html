@@ -1,17 +1,51 @@
-<table *ngIf = "applicants && applicants.length > 0">
-    <thead>
-            <td>Customer Id</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Email</td>
-    </thead>
-    <tbody *ngFor = "let i of applicants">
-        <tr>
-        <td>{{i.customerId}}</td>
-        <td>{{i.firstName}}</td>
-        <td>{{i.lastName}}</td>
-        <td>{{i.emailId}}</td>
-    </tr>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Admin Dashboard</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/admindashboard">Dashboard</a>
+        <a mat-list-item routerLink="/clientlist">Clients</a>
+        <a mat-list-item routerLink="/newapplication">Applications</a>
+        <a mat-list-item routerLink="/adminrejectedlist">RejectedList</a>
+        <a mat-list-item routerLink="/login">Log Out</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>Welcome Admin</span>
+      </mat-toolbar>
+      <!-- Add Content Here -->
+      <h2 style="text-align:center;">Client List</h2>
+      <table *ngIf = "applicants && applicants.length > 0">
+        <thead>
+                <td>Customer Id</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+        </thead>
+        <tbody *ngFor = "let i of applicants">
+            <tr>
+            <td>{{i.customerId}}</td>
+            <td>{{i.firstName}}</td>
+            <td>{{i.lastName}}</td>
+            <td>{{i.emailId}}</td>
+        </tr>
+    
+        </tbody>
+    </table>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
 
-    </tbody>
-</table>
+
+

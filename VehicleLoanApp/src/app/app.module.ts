@@ -15,11 +15,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from "@angular/common/http";
+import { ClientListComponent } from './admin/client-list/client-list/client-list.component';
+import { RejectedListComponent } from './admin/rejected-list/rejected-list/rejected-list.component';
+import { NewApplicationsComponent } from './admin/new-applications/new-application/new-application.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,ClientListComponent,RejectedListComponent,NewApplicationsComponent
   ],
   imports: [
     BrowserModule,

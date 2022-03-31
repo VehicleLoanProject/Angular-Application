@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import { applicantDetails } from '../../Models/applicantDetails';
 import {ClientListService } from '../client-list.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-client-list',
@@ -13,7 +16,12 @@ export class ClientListComponent implements OnInit {
 
   applicants?: applicantDetails[];
   errMsg?: string;
-  constructor(private _cls:ClientListService ) { }
+  constructor(private _cls:ClientListService, private breakpointObserver: BreakpointObserver) { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
 
   ngOnInit(): void {
     const observerObj : Observer<applicantDetails[]> = {

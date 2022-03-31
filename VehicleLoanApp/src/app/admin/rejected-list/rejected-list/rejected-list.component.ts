@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import {applicantDetails} from '../../Models/applicantDetails'
 import { rejectedListService } from '../rejected-list.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-rejected-list',
@@ -17,8 +19,12 @@ export class RejectedListComponent implements OnInit {
   applicants?: applicantDetails[];
   errMsg? :string ;
   
-  constructor(private  _rls:rejectedListService) { }
-
+  constructor(private  _rls:rejectedListService, private breakpointObserver: BreakpointObserver) { }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
   ngOnInit(): void {
     const observerObj : Observer<applicantDetails[]> = {
       next : (data : applicantDetails[]) => {

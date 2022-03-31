@@ -2,7 +2,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import { NewApplicationsServices } from '../new-application.service';
-import {allApplicationDetails} from '../../Models/newApplicationModel'
+import {allApplicationDetails} from '../../Models/newApplicationModel';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-new-applications',
@@ -13,9 +15,15 @@ export class NewApplicationsComponent implements OnInit {
 
   applications?:allApplicationDetails[];
   errMsg?: string;
-  constructor(private _nas :NewApplicationsServices) { 
+  constructor(private _nas :NewApplicationsServices,private breakpointObserver: BreakpointObserver) { 
     console.log("new aplication component.");
   }
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+    .pipe(
+      map(result => result.matches),
+      shareReplay()
+    );
+
 
   ngOnInit(): void {
     const observerObj : Observer<allApplicationDetails[]> = {
