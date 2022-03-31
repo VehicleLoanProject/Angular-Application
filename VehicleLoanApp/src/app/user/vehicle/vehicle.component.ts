@@ -29,7 +29,7 @@ export class VehicleComponent { //implements OnInit {
       //console.log(this.vehicleDataSubmit.value);
       //CarMake: this.vehicleDataSubmit.value.CarMake,
     }
-    this._rs.vehicleDataSubmit(vehicleData)
+    this._rs.VehicleDetails(vehicleData)
     .subscribe({next:(data:any) =>{
       alert("Successfully Added")
     },

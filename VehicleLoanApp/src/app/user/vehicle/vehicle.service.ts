@@ -13,7 +13,7 @@ export class VehicleService
     {
 
     }
-    public vehicleDataSubmit(vehicledetails :Vehicle):Observable<ResponseModel> {
+    public VehicleDetails(vehicledetails :Vehicle):Observable<ResponseModel> {
        const responseObs: Observable<any>=this._http.post(this.url,vehicledetails);
        return responseObs.pipe(map((resp: any)=><ResponseModel>resp))
     }
