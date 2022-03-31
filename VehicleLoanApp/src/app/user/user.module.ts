@@ -10,7 +10,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { RegistrationService } from "../user/services/registration.service";
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-
+import { ApplicantService } from './application/applicant.service';
 
 
 @NgModule({

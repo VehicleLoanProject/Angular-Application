@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule} from "@angular/forms";
+//import { Application } from '../models/application';
+import { Router } from '@angular/router';
+import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
+import { applicantDetails } from 'src/app/admin/Models/applicantDetails';
+import { ApplicantService } from './applicant.service';
 
 @Component({
   selector: 'app-application',
@@ -8,7 +14,7 @@ import { FormsModule} from "@angular/forms";
 })
 export class ApplicationComponent implements OnInit {
 
-  constructor() { }
+  //constructor() { }
 
   ngOnInit(): void {
   }
@@ -17,5 +23,23 @@ export class ApplicationComponent implements OnInit {
   {
     console.log(data)
   }
+  ApplicantDetails()
+  {
+    const applicantData:applicantDetails  =<applicantDetails>{
+      
+    }
+    this._rs.ApplicantDetails(applicantData)
+    .subscribe({next:(data:any) =>{
+      alert("Successfully Added")
+    },
+    error:(errorMessage : HttpErrorResponse) => {
+      console.log(errorMessage);
+      alert("Sorry check")
+    },
+    complete: () =>{}
+    
+    });
+  }
+  constructor(private router:Router, private _rs:ApplicantService){}
 
 }

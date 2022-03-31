@@ -86,7 +86,7 @@
             *ngIf="(UserId.touched || applicationForm.submitted) && UserId.errors?.['required']">
             UserId Is Required</span>
     
-            <button routerLink="/vehicle" class="btn btn-danger btn-block text-center signin"  type="submit">Next</button>
+            <button routerLink="/vehicle" class="btn btn-danger btn-block text-center signin"  type="submit" (click)="ApplicantDetails()">Next</button>
             
     
         </form>
