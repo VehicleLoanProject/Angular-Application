@@ -52,17 +52,17 @@ RoleId = 100;
 
   ngOnInit(): void {
   }
-  get  UserEmail()
+  get  userId()
   {
-    return this.registration.get("UserEmail")
+    return this.registration.get("UserId")
   }
-  get Userpassword()
+  get password()
   {
-    return this.registration.get("Userpassword")
+    return this.registration.get("Password")
   }
-  get UserRole()
+  get roleId()
   {
-    return this.registration.get("UserRole")
+    return this.registration.get("RoleId")
   }
 
   

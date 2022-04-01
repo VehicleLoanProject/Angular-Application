@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
 
   userlogin:FormGroup = new FormGroup(
     {
-      UserId:new FormControl('',[Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"),Validators.required]),
-      Password:new FormControl('',[Validators.pattern("[]"),Validators.required]),
-      RoleId:new FormControl('',[Validators.pattern("[]"),Validators.required])
+      UserId:new FormControl('',[Validators.required,Validators.email]),
+      Password:new FormControl('',[Validators.required,Validators.minLength(7),Validators.maxLength(10)]),
+      RoleId:new FormControl('',[Validators.required])
     }
   )
  
@@ -69,15 +69,15 @@ export class LoginComponent implements OnInit {
   }
   get  userId()
   {
-    return this.userlogin.get("userId")
+    return this.userlogin.get("UserId")
   }
   get password()
   {
-    return this.userlogin.get("password")
+    return this.userlogin.get("Password")
   }
   get roleId()
   {
-    return this.userlogin.get("roleId")
+    return this.userlogin.get("RoleId")
   }
 
 }

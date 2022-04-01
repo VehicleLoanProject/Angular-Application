@@ -14,54 +14,25 @@
          <div  class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 loginbox">
          
            <form [formGroup]="registration" (ngSubmit)="Usercredentials()">
-             <div class="form-group mb-4"><label for="form1Example1"
-                 class="form-label">Email address</label>
+             <div class="form-group mb-4"><label for="form1Example1" class="form-label">Email address</label>
                  <!-- Email input -->
                  <input type="email" id="form1Example1" name="UserId" formControlName="UserId" class="form-control "></div>
-                  
-                 <div [hidden] = "registration.controls['UserId'].valid || registration.controls['UserId'].pristine">
-                  <div *ngIf = "registration.controls['UserId'].errors?.['required']">
-                    User Id is required
-                  </div>
-                  <div *ngIf = "registration.controls['UserId'].errors?.['email']">
-                    User Id must be an email id
-                  </div>
-                  
-                </div>
+                 <span style="color: red;" *ngIf="userId && userId.invalid && userId.touched"><h3>Email is Required</h3></span>
+
        
-             <div  class="form-group mb-4"><label  for="form1Example2"
-                 class="form-label">Password</label>
+             <div  class="form-group mb-4"><label  for="form1Example2" class="form-label">Password</label>
                  <!-- Password input -->
-                 <input  type="password" id="form1Example2"
-                 name="Password" formControlName="Password" class="form-control "></div>
-
-                 <div [hidden] = "registration.controls['Password'].valid || registration.controls['Password'].pristine">
-                  <div *ngIf = "registration.controls['Password'].errors?.['required']">
-                    Password required
-                  </div>
-                  <div *ngIf = "registration.controls['Password'].errors?.['max']">
-                    Length of password must be between 6 and 10.
-                  </div>
-                  <div *ngIf = "registration.controls['Password'].errors?.['min']">
-                    Length of password must be between 6 and 10.
-                  </div>
-                  
-                </div>
-
+                 <input  type="password" id="form1Example2" name="Password" formControlName="Password" class="form-control "></div>
+                 <span style="color: red;" *ngIf="password && password.invalid && password.touched"><h3> Password Lenght Should Be Mininum 7 And Maximum 10 digit</h3></span>
+            
                    <div class="form-group mb-4"><label for="form1Example4" class="form-label">Role Type</label><br>
                     <!-- Roletype input -->
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="RoleId" id="inlineRadio1" value="101" formControlName="RoleId">
                         <label class="form-check-label" for="inlineRadio1">User</label>
                       </div>
-                       
-                      <div [hidden] = "registration.controls['RoleId'].valid || registration.controls['RoleId'].pristine">
-                        <div *ngIf = "registration.controls['RoleId'].errors?.['required']">
-                          Please select a role.
-                        </div>
-                      </div>
                     </div>
-             <button  type="submit" class="btn btn-danger btn-block text-center signin" >Register</button>
+             <button  type="submit" class="btn btn-danger btn-block text-center signin" [disabled]="registration.invalid">Register</button>
              <button  type="submit" class="btn btn-danger btn-block text-center signin" routerLink="/login" >Login</button>
           
            </form>

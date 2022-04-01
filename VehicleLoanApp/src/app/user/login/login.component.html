@@ -26,37 +26,21 @@
                     <label class="form-check-label" for="inlineRadio2">Admin</label>
                   </div>
                   <div>
+                    
                   </div>
                 </div>
              <div class="form-group mb-4"><label for="form1Example1"
                  class="form-label">Email address</label>
                  <!-- Email input -->
                  <input type="email" id="form1Example1" name="UserId" formControlName="UserId" class="form-control "></div>
-                 <div [hidden] = "userlogin.controls['UserId'].valid || userlogin.controls['UserId'].pristine">
-                      <div *ngIf = "userlogin.controls['UserId'].errors?.['required']">
-                        User Id is required
-                      </div>
-                      <div *ngIf = "userlogin.controls['UserId'].errors?.['email']">
-                        User Id must be an email id
-                      </div>
-                  </div>
+                 <span style="color: red;" *ngIf="userId && userId.invalid && userId.touched"><h5>Email is Required</h5></span>
+                
        
              <div  class="form-group mb-4"><label  for="form1Example2"
                  class="form-label">Password</label>
                  <!-- Password input -->
-                 <input  type="password" id="form1Example2"
-                 name="Password" formControlName="Password" class="form-control "></div>
-                 <div [hidden] = "userlogin.controls['Password'].valid || userlogin.controls['Password'].pristine">
-                      <div *ngIf = "userlogin.controls['Password'].errors?.['required']">
-                        Password required
-                      </div>
-                      <div *ngIf = "userlogin.controls['Password'].errors?.['max']">
-                        Length of password must be between 6 and 10.
-                      </div>
-                      <div *ngIf = "userlogin.controls['Password'].errors?.['min']">
-                        Length of password must be between 6 and 10.
-                      </div>
-                 </div>
+                 <input  type="password" id="form1Example2" name="Password" formControlName="Password" class="form-control "></div>
+                 <span style="color: red;" *ngIf="password && password.invalid && password.touched"><h5>Password Lenght Should Be Mininum 7 And Maximum 10 digit</h5></span>
              <div  class="row mb-4">
                <div  class="col d-flex">
                  <div  class="form-check">
@@ -70,7 +54,7 @@
              
             </div>
 
-             <button type="submit" class="btn btn-danger btn-block text-center signin" >Login</button>
+             <button type="submit" class="btn btn-danger btn-block text-center signin"[disabled]="userlogin.invalid">Login</button>
             <nav routerLink="/admindashboard">{{result}}</nav>
              <nav routerLink="/userdashboard">{{orresult}}</nav>
            </form><br>Don't you have an account please register here<br>
