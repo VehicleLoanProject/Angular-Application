@@ -47,7 +47,7 @@
     <span class="text-danger"
     *ngIf="(fresidenceDuration.touched || eligibilityForm.submitted) && fresidenceDuration.errors?.['required']">
     No Of Months are required </span><br><br>
-    <button class="home2 " type="submit" [disabled] (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
+    <button class="home2 " type="submit" [disabled]="eligibilityForm.invalid" (click)="checkyoureligibility(eligibilityForm.value)">Check Eligibilty</button>
   </form>
 </body>
 <p routerLink="/login" class="result">{{result}}</p>

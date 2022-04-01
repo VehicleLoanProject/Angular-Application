@@ -6,7 +6,7 @@ import { CheckEligibilityComponent } from './check-eligibility/check-eligibility
 import {FormsModule  } from "@angular/forms";
 import { AppRoutingModule } from '../app-routing.module';
 import { AboutusComponent } from './aboutus/aboutus.component';
-
+import {ReactiveFormsModule  } from "@angular/forms";
 
 
 
@@ -18,7 +18,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     AboutusComponent
   ],
   imports: [
-    CommonModule,FormsModule,AppRoutingModule
+    CommonModule,FormsModule,AppRoutingModule,ReactiveFormsModule
   ],
   exports:[HomepageComponent,EmiCalculatorComponent]
 })

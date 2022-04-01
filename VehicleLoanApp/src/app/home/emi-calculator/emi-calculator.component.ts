@@ -1,6 +1,7 @@
 
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { FormGroup,FormControl,Validators } from "@angular/forms";
 
 
 @Component({
@@ -21,7 +22,12 @@ export class EmiCalculatorComponent  {
   sp:number=0;
   tip:number=0;
   tp:number=0;
-
+ 
+  calculatorForm=new FormGroup({
+    amount:new FormControl('',[Validators.required]),
+    rate:new FormControl('',[Validators.required]),
+    time:new FormControl('',[Validators.required])
+  })
   
   emiCalculator(){
     this.mir=(this.rate/100)/12;
@@ -31,6 +37,18 @@ export class EmiCalculatorComponent  {
     this.emi=((this.amount * this.mir) * this.sp);
     this.tip=this.emi*this.time;
     this.tp=this.tip-this.amount;
+
+  }
+  get Amount(){
+    return this.calculatorForm.get("amount")
+
+  }
+  get Rate(){
+    return this.calculatorForm.get("rate")
+
+  }
+  get Time(){
+    return this.calculatorForm.get("time")
 
   }
 
