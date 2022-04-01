@@ -52,10 +52,13 @@ export class LoginComponent implements OnInit {
      console.log(this.userlogin.value)
      if(userData["RoleId"]==100 && (this.token !=null))
      {
-       this.result="[GO TO ADMIN-DASHBOARD]";
+       //this.result="[GO TO ADMIN-DASHBOARD]";
+       this.router.navigate(['/admindashboard']);
      }
      else if(userData["RoleId"]==101 && (this.token !=null))
-     {  this.orresult="[GO TO USER-DASHBOARD]";
+     {  
+       //this.orresult="[GO TO USER-DASHBOARD]";
+       this.router.navigate(['/userdashboard']);
       }
 
   }
