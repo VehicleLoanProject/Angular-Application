@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
         next: (data: TokenInfo) =>{ 
           sessionStorage.setItem('token', data.token)
           this.token = data.token;},
-        error: (err) => console.log(err),
+        error: (err) => {console.log(err),
+        alert("Invalid User Id or Password !");},
         complete: () =>{/* const snapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
           if (snapshot.queryParams['returnUrl']) {
             const returnUrl = snapshot.queryParams['returnUrl']
