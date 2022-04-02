@@ -137,9 +137,9 @@
             </div>
             <br><br>
             <div id="centered">
-                        <button type="button" class="btn btn-primary" id = "b-one" (click) = "approveLoan()">Approve</button>
-                        <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click) = "rejectLoan()">Reject</button>
-                        <button type="button" class="btn btn-primary" routerLink = '/newapplication'>Close</button>
+                        <button type="button" class="btn btn-primary" id = "b-one" (click) = "approveLoan()" [disabled] ="setApprove || setReject" >Approve</button>
+                        <button type="button" class="btn btn-primary" style="margin-right: 20px;" (click) = "rejectLoan()" [disabled] ="setApprove || setReject">Reject</button>
+                        <button type="button" class="btn btn-primary" (click) = "onClose()" >Close</button>
             </div>
             
         </form>

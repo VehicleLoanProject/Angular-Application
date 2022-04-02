@@ -20,11 +20,9 @@ export class CustomerapplicationComponent implements OnInit {
   loanRecord? : loanDetails;
 
   id?:number;
-  f = {
-    custid : 11002
-  }
   
-  
+  setApprove : boolean =false;
+  setReject : boolean = false;  
 
   newapplication:FormGroup = new FormGroup({
       customerId : new FormControl({value :'', disabled : true}),
@@ -101,6 +99,9 @@ export class CustomerapplicationComponent implements OnInit {
   }
 
   approveLoan(){
+    this.setApprove = true;
+    this.setReject = true;
+
     this.loanRecord = {
       loanAmount: this.application?.loanAmount,
       loanTenure: this.application?.loanTenure,
@@ -119,6 +120,9 @@ export class CustomerapplicationComponent implements OnInit {
       })
   }
   rejectLoan(){
+    this.setApprove = true;
+    this.setReject = true;
+
     this.loanRecord = {
       loanAmount: this.application?.loanAmount,
       loanTenure: this.application?.loanTenure,
@@ -134,6 +138,10 @@ export class CustomerapplicationComponent implements OnInit {
       complete:()=>{}
 
       })
+  }
+
+  onClose(){
+    this.router.navigate(['/newapplication']);
   }
 
 }
