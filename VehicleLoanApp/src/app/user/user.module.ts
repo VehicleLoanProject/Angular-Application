@@ -11,6 +11,7 @@ import { RegistrationService } from "../user/services/registration.service";
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ApplicantService } from './application/applicant.service';
+import { ForgetpasswordService } from './services/forgetpassword.service';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { ApplicantService } from './application/applicant.service';
   imports: [
     CommonModule,ReactiveFormsModule,FormsModule,AppRoutingModule
   ],
-  exports:[LoginComponent,ApplicationComponent,RegistrationComponent],
-  providers:[RegistrationService]
+  exports:[LoginComponent,ApplicationComponent,RegistrationComponent,ForgetPasswordComponent],
+  providers:[RegistrationService,ForgetpasswordService]
 })
 export class UserModule { }
