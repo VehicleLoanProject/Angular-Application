@@ -86,6 +86,8 @@
                         <input class="form-check-input" type="radio" name="Gender" id="inlineRadio1" value="male" formControlName="Gender">Male
                       
                         <input class="form-check-input" type="radio" name="Gender" id="inlineRadio2" value="female" formControlName="Gender">Female
+                        <input class="form-check-input" type="radio" name="Gender" id="inlineRadio3" value="others" formControlName="Gender">Others
+                        
                         
                         
                       </div>
@@ -125,7 +127,9 @@
              <div *ngIf = "applicantdetails.controls['EmailId'].errors?.['required']">
                Email ID is required
              </div>
-             
+             <div *ngIf = "applicantdetails.controls['EmailId'].errors?.['pattern']">
+              Email ID pattern not matches
+            </div>
              
            </div>
            <div  class="form-group mb-4"><label  for="form1Example9"
@@ -183,14 +187,19 @@
                <div *ngIf = "applicantdetails.controls['Pincode'].errors?.['required']">
                  PinCode is required
                </div>
-               
+               <div *ngIf = "applicantdetails.controls['Pincode'].errors?.['pattern']">
+                PinCode must be 6 digits
+              </div>
                </div>
                <div  class="form-group mb-4"><label  for="form1Example13"
                   class="form-label">Type Of Employement</label>
                   <!-- Password input -->
-                  <input  type="text" id="form1Example13"
-                  name="TypeOfEmployement" formControlName="TypeOfEmployement" class="form-control "></div>
- 
+                  <select  name="dropdown" id="form1Example13"
+                  name="TypeOfEmployement" formControlName="TypeOfEmployement" class="form-control ">
+                  <option value="Salaried" selected>Salaried</option>
+                  <option value="SelfEmployed" >Self Employed</option>
+                 </select>
+                 </div>
                   <div class="alert-error" [hidden] = "applicantdetails.controls['TypeOfEmployement'].valid || applicantdetails.controls['TypeOfEmployement'].pristine">
                    <div *ngIf = "applicantdetails.controls['TypeOfEmployement'].errors?.['required']">
                      Employement Type is required
