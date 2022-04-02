@@ -1,20 +1,18 @@
-
-  .header {
-    background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
-    margin-top: 20px;
-    height: 100px;
-  }
+.header1{
+  width: max-width;
+  height: 100px;
+  background-color:#777;
+  text-align:left;
+  color: white;
+  font-size: medium;
+ border-radius: 10px;
+ text-align: left;
+ text-size-adjust: 40;
+}
+.alert-error{
   
+  color:red
+}
   
-footer {
-    background-color: #777;
-    padding: 10px;
-    text-align: center;
-    color: white;
-  }
   
   

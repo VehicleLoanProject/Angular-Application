@@ -1,35 +1,108 @@
 <header class="header1">
     <h2>VEHICLE LOAN</h2>
+    <br>
+    <button routerLink="/homepage">HOME</button>
   </header>
-<div class="applicationform"><h2>Vehicle Details</h2></div>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        <form #vehicleForm="ngForm" (ngSubmit)="vehicleDataSubmit(vehicleForm.value)">
-            <label   class="form-label" for="CarMake">CarMake: </label>
-            <input class="form-control" type="text" name="CarMake" id="CarMake" ngModel required #CarMake="ngModel">
-            <span class="text-danger"
-                *ngIf="(CarMake.touched || vehicleForm.submitted) && CarMake.errors?.['required']">
-                CarMake is required </span>
-            <label   class="form-label" for="CarModel">CarModel: </label>
-            <input class="form-control" type="text" name="CarModel" id="CarModel" ngModel required #CarModel="ngModel">
-            <span class="text-danger"
-                *ngIf="(CarModel.touched || vehicleForm.submitted) && CarModel.errors?.['required']">
-                CarModel is required </span>
-            <label   class="form-label" for="ExshowroomPrice">Exshowroom Price: </label>
-            <input class="form-control" type="number" name="ExshowroomPrice" id="ExshowroomPrice" ngModel required #ExshowroomPrice="ngModel">
-            <span class="text-danger"
-                *ngIf="(ExshowroomPrice.touched || vehicleForm.submitted) && ExshowroomPrice.errors?.['required']">
-                Exshowroom Price is required </span>
-            <label   class="form-label" for="OnroadPrice">On roadPrice: </label>
-            <input class="form-control" type="number" name="OnroadPrice" id="OnroadPrice" ngModel required #OnroadPrice="ngModel">
-            <span class="text-danger"
-                *ngIf="(OnroadPrice.touched || vehicleForm.submitted) && OnroadPrice.errors?.['required']">
-                Onroad Price is required </span>
-            <label class="form-label" for="CustomerID">Customer ID : </label>
-            <input class="form-control"  type="number" name="CustomerID" id="CustomerID" ngModel required #CustomerID="ngModel"><br>
-            <span class="text-danger"
-                *ngIf="(CustomerID.touched || vehicleForm.submitted) && CustomerID.errors?.['required']">
-                CustomerID is required </span>
-        <button class="btn btn-danger btn-block text-center signin" routerLink="/loandetails" type="button" (click)="VehicleDetails()">Next</button>
-        </form>
+  </head>
+<body>
+    <div class="container logincontainer" >
+        <h1 class="mb-4 header text-danger" align="center">Application Dashboard</h1>
+         <hr><br>
+         <div  class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 loginbox">
+         
+           <form [formGroup]="vehicledetails" (ngSubmit)="Usercredentials()">
+             <div class="form-group mb-4"><label for="form1Example1"
+                 class="form-label">Car Make</label>
+                 <!-- Email input -->
+                 <input type="text" id="form1Example1" name="CarMake" formControlName="CarMake" class="form-control "></div>
+                  
+                 <div class="alert-error" [hidden] = "vehicledetails.controls['CarMake'].valid || vehicledetails.controls['CarMake'].pristine">
+                  <div *ngIf = "vehicledetails.controls['CarMake'].errors?.['required']">
+                    Car Make is required
+                  
+                </div>
+                 
+                </div>
+       
+             <div  class="form-group mb-4"><label  for="form1Example2"
+                 class="form-label">Car Model</label>
+                 <!-- Password input -->
+                 <input  type="text" id="form1Example2"
+                 name="CarModel" formControlName="CarModel" class="form-control "></div>
+
+                 <div class="alert-error" [hidden] = "vehicledetails.controls['CarModel'].valid || vehicledetails.controls['CarModel'].pristine">
+                  <div *ngIf = "vehicledetails.controls['CarModel'].errors?.['required']">
+                    Car Model required
+                  </div>
+                  
+                  
+                </div>
+
+                   <div class="form-group mb-4"><label for="form1Example4" class="form-label">ExShowroom Price</label><br>
+                    <!-- Roletype input -->
+                    <!--div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="RoleId" id="inlineRadio1" value="101" formControlName="RoleId">
+                        <label class="form-check-label" for="inlineRadio1">User</label>
+                      </div-->
+                      <input  type="number" id="form1Example4"
+                 name="ExShowroomPrice" formControlName="ExShowroomPrice" class="form-control "></div>
+
+                       
+                      <div class="alert-error" [hidden] = "vehicledetails.controls['ExShowroomPrice'].valid || vehicledetails.controls['ExShowroomPrice'].pristine">
+                        <div *ngIf = "vehicledetails.controls['ExShowroomPrice'].errors?.['required']">
+                           ExShowroom Price Required
+                        </div>
+                      
+                    </div>
+                    <div class="form-group mb-4"><label for="form1Example5" class="form-label">OnRoad Price</label><br>
+                        <!-- Roletype input -->
+                        <!--div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="RoleId" id="inlineRadio1" value="101" formControlName="RoleId">
+                            <label class="form-check-label" for="inlineRadio1">User</label>
+                          </div-->
+                          <input  type="number" id="form1Example5"
+                     name="OnRoadPrice" formControlName="OnRoadPrice" class="form-control "></div>
+    
+                           
+                          <div class="alert-error" [hidden] = "vehicledetails.controls['OnRoadPrice'].valid || vehicledetails.controls['OnRoadPrice'].pristine">
+                            <div *ngIf = "vehicledetails.controls['OnRoadPrice'].errors?.['required']">
+                               OnRoad Price Required
+                            </div>
+                          
+                        </div>
+                        <div class="form-group mb-4"><label for="form1Example6" class="form-label">CustomerId</label><br>
+                            
+                              <input  type="number" id="form1Example6"
+                         name="CustomerId" formControlName="CustomerId" class="form-control "></div>
         
-        
+                               
+                              <div class="alert-error" [hidden] = "vehicledetails.controls['CustomerId'].valid || vehicledetails.controls['CustomerID'].pristine">
+                                <div *ngIf = "vehicledetails.controls['CustomerId'].errors?.['required']">
+                                  Enter CustomerID
+                                </div>
+                            </div>
+
+                            <button  type="submit" class="btn btn-danger btn-block text-center signin" >Next</button>&nbsp;&nbsp;
+                            <button  type="submit" class="btn btn-danger btn-block text-center signin" routerLink="/application" >Back</button>
+                         
+                          </form>
+                        </div>
+                      </div>
+               </body>
+               <footer class="footer1">
+                   <a href="#aboutus">About Us</a>
+                    &nbsp;&nbsp;
+                     <a href="#privacyPolicy">Privicy Policy </a>
+                   &nbsp; &nbsp;
+                   <a href="#carrier">Carrier</a>
+                   <br>  <br>
+                    <p>@vehicleloan, Some rights reserved</p>
+                
+                 </footer>
+               
+               
+              
+                     

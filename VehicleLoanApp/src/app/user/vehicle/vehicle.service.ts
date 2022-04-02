@@ -13,13 +13,10 @@ export class VehicleService
     {
 
     }
-    public VehicleDetails(vehicledetails :Vehicle):Observable<ResponseModel> {
-       const responseObs: Observable<any>=this._http.post(this.url,vehicledetails);
-       return responseObs.pipe(map((resp: any)=><ResponseModel>resp))
+    public addUserRecord(userRecord: Vehicle): Observable<ResponseModel> {
+        const responseObs: Observable<any> = this._http.post(this.url, userRecord);
+        return responseObs.pipe(map((resp: any) => <ResponseModel>resp))
     }
-    /*public AddVehicle(vehicle:Vehicle[]):Observable<Vehicle>
-    {
-        const httpOptions ={header: new HttpHeaders({'Content-Type': 'application/json'})};
-        return this._http.post<Vehicle>(this.url +'/',vehicle,httpOptions);
-    }*/
+        
+    
 }

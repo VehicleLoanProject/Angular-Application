@@ -1,94 +1,254 @@
-
-<header class="header">
+<header class="header1">
     <h2>VEHICLE LOAN</h2>
+    <br>
+    <button routerLink="/homepage">HOME</button>
   </header>
-  
-<h1>Application Form !</h1>
-<body class="body">
-    <div>
-        <form class="Form" #applicationForm="ngForm" (ngSubmit)="ApplicantDetails(applicationForm.value)">
-            <div ><h2>Personal Details</h2></div>
-            <label   class="form-label" for="AppliedOn">Date of Application: </label>
-            <input class="form-control" type="date" name="AppliedOn" id="FirstName" ngModel required #AppliedOn="ngModel">
-            <span class="text-danger"
-                *ngIf="(AppliedOn.touched || applicationForm.submitted) && AppliedOn.errors?.['required']">
-                Applied On is required </span>
-            <label   class="form-label" for="FirstName">First Name: </label>
-            <input class="form-control" type="text" name="FirstName" id="FirstName" ngModel required #FirstName="ngModel">
-            <span class="text-danger"
-            *ngIf="(FirstName.touched || applicationForm.submitted) && FirstName.errors?.['required']">
-            First Name is required </span>
-            <label   class="form-label" for="MiddleName">Middle Name: </label>
-            <input class="form-control"  type="text" name="MiddleName" id="MiddleName" ngModel ><br>
-            <label   class="form-label" for="LastName">Last Name: </label>
-            <input class="form-control"  type="text" name="LastName" id="LastName" ngModel required #LastName="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(LastName.touched || applicationForm.submitted) && LastName.errors?.['required']">
-            LastName is required </span>
-            <label   class="form-label" for="Age">Age: </label>
-            <input class="form-control"  type="number" name="Age" id="Age" ngModel required #Age="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(Age.touched || applicationForm.submitted) && Age.errors?.['required']">
-            Age is required </span>
-            <label   class="form-label" for="Gender">Gender: </label>
-            <input class="form-control"  type="text" name="Gender" id="Gender" ngModel required #Gender="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(Gender.touched || applicationForm.submitted) && Gender.errors?.['required']">
-            Gender is required </span>
-            <label  class="form-label" for="ContactNo">Contact Number: </label>
-            <input class="form-control"  type="number" name="ContactNo" id="ContactNo" ngModel required #ContactNo="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(ContactNo.touched || applicationForm.submitted) && ContactNo.errors?.['required']">
-            ContactNo is required </span>
-            <label  class="form-label" for="EmailId">EmailId : </label>
-            <input class="form-control"  type="email" name="EmailId" id="EmailId" ngModel required #EmailId="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(AppliedOn.touched || applicationForm.submitted) && EmailId.errors?.['required']">
-            EmailId is required </span>
-            <label   class="form-label" for="Address">Address : </label>
-            <input class="form-control"  type="text" name="Address" id="Address" ngModel required #Address="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(Address.touched || applicationForm.submitted) && Address.errors?.['required']">
-            Address is required </span>
-            <label   class="form-label" for="State">State : </label>
-            <input class="form-control"  type="text" name="State" id="State" ngModel required #State="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(State.touched || applicationForm.submitted) && State.errors?.['required']">
-            State is required </span>
-            <label   class="form-label" for="City">City : </label>
-            <input class="form-control"  type="text" name="City" id="City" ngModel required #City="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(City.touched || applicationForm.submitted) && City.errors?.['required']">
-            City is required </span>
-            <label  class="form-label" for="Pincode">Pincode : </label>
-            <input class="form-control"  type="number" name="Pincode" id="Pincode" ngModel required #Pincode="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(Pincode.touched || applicationForm.submitted) && Pincode.errors?.['required']">
-            Pincode is required </span>
-            <label   class="form-label" for="TypeOfEmployement">Employement Type(Salaried Or Self-Employement) : </label>
-            <input class="form-control"  type="text" name="TypeOfEmployement" id="TypeOfEmployement" ngModel required #TypeOfEmployement="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(TypeOfEmployement.touched || applicationForm.submitted) && TypeOfEmployement.errors?.['required']">
-            Employement is required </span>
-            <label   class="form-label" for="YearlySalary">Yearly Salary : </label>
-            <input class="form-control"  type="number" name="YearlySalary" id="YearlySalary" ngModel required #YearlySalary="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(YearlySalary.touched || applicationForm.submitted) && YearlySalary.errors?.['required']">
-            Yearly Salary is required </span>
-            <label   class="form-label" for="ExistingEmi"> Existing EMI : </label>
-            <input class="form-control"  type="number" name="ExistingEmi" id="ExistingEmi" ngModel required #ExistingEmi="ngModel" ><br>
-            <span class="text-danger"
-            *ngIf="(ExistingEmi.touched || applicationForm.submitted) && ExistingEmi.errors?.['required']">
-            Existing Emi is required  (if not mention 0(zero) ) </span>
-            <label   class="form-label" for="UserId"> User ID : </label>
-            <input class="form-control"  type="email" name="UserId" id="UserId" ngModel required #UserId="ngModel"><br>
-            <span class="text-danger"
-            *ngIf="(UserId.touched || applicationForm.submitted) && UserId.errors?.['required']">
-            UserId Is Required</span>
-    
-            <button  class="btn btn-danger btn-block text-center signin"  type="button" >Next</button>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+<body>
+    <div class="container logincontainer" >
+        <h1 class="mb-4 header text-danger" align="center">Application Details Dashboard</h1>
+         <hr><br>
+         <div  class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 loginbox">
+         
+           <form [formGroup]="applicantdetails"(ngSubmit)="Usercredentials()" routerlink="/vehicledetails">
+             <div class="form-group mb-4"><label for="form1Example1"
+                 class="form-label">Applied On</label>
+                 <!-- Email input -->
+                 <input type="date" id="form1Example1" name="AppliedOn" formControlName="AppliedOn" class="form-control "></div>
+                  
+                 <div class="alert-error" [hidden] = "applicantdetails.controls['AppliedOn'].valid || applicantdetails.controls['AppliedOn'].pristine">
+                  <div *ngIf = "applicantdetails.controls['AppliedOn'].errors?.['required']">
+                    Date is required
+                </div>
+                 
+            </div>
+            <div class="form-group mb-4"><label for="form1Example2"
+                class="form-label">First Name</label>
+                <!-- Email input -->
+                <input type="text" id="form1Example2" name="FirstName" formControlName="FirstName" class="form-control "></div>
+                 
+                <div class="alert-error" [hidden] = "applicantdetails.controls['FirstName'].valid || applicantdetails.controls['FirstName'].pristine">
+                 <div *ngIf = "applicantdetails.controls['FirstName'].errors?.['required']">
+                   First Name is required
+                 
+               </div>
+               <div *ngIf = "applicantdetails.controls['FirstName'].errors?.['pattern']">
+                First Name Must be Characters 
+              
+            </div>
+                
+               </div>
+               <div class="form-group mb-4"><label for="form1Example3"
+                class="form-label">Middle Name</label>
+                <!-- Email input -->
+                <input type="text" id="form1Example3" name="MiddleName" formControlName="MiddleName" class="form-control "></div>
+                
+             <div [hidden] = "applicantdetails.controls['MiddleName'].valid || applicantdetails.controls['MiddleName'].pristine">
+                <div *ngIf = "applicantdetails.controls['MiddleName'].errors?.['pattern']">
+                  Middle  Name Must be Characters 
+                
+              </div>
+              </div>
+                <div class="form-group mb-4"><label for="form1Example4"
+                    class="form-label">Last Name</label>
+                    <!-- Email input -->
+                    <input type="text" id="form1Example4" name="LastName" formControlName="LastName" class="form-control "></div>
+                     
+                    <div class="alert-error" [hidden] = "applicantdetails.controls['LastName'].valid || applicantdetails.controls['LastName'].pristine">
+                     <div *ngIf = "applicantdetails.controls['LastName'].errors?.['required']">
+                       Last Name is required
+                     
+                   </div>
+                   <div *ngIf = "applicantdetails.controls['LastName'].errors?.['pattern']">
+                    Last Name Must be Characters 
+                  
+                </div>
+                    
+                   </div> 
+                   <div class="form-group mb-4"><label for="form1Example5"
+                    class="form-label">Age</label>
+                    <!-- Email input -->
+                    <input type="number" id="form1Example5" name="Age" formControlName="Age" class="form-control "></div>
+                     
+                    <div class="alert-error" [hidden] = "applicantdetails.controls['Age'].valid || applicantdetails.controls['Age'].pristine">
+                     <div *ngIf = "applicantdetails.controls['Age'].errors?.['required']">
+                       Age is required
+                     
+                   </div>
+                    
+                   </div>
+                   <div class="form-group mb-4"><label for="form1Example6" class="form-label">Gender</label><br>
+                    <!-- Roletype input -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="Gender" id="inlineRadio1" value="male" formControlName="Gender">Male
+                      
+                        <input class="form-check-input" type="radio" name="Gender" id="inlineRadio2" value="female" formControlName="Gender">Female
+                        
+                        
+                      </div>
+                       
+                      <div class="alert-error" [hidden] = "applicantdetails.controls['Gender'].valid || applicantdetails.controls['Gender'].pristine">
+                        <div *ngIf = "applicantdetails.controls['Gender'].errors?.['required']">
+                          Please select Gender.
+                        </div>
+                      </div>
+                    </div>
+
+                
+   
+         <div  class="form-group mb-4"><label  for="form1Example7"
+             class="form-label">Contact Number</label>
+             <!-- Password input -->
+             <input  type="number" id="form1Example7"
+             name="ContactNo" formControlName="ContactNo" class="form-control "></div>
+
+             <div class="alert-error" [hidden] = "applicantdetails.controls['ContactNo'].valid || applicantdetails.controls['ContactNo'].pristine">
+              <div *ngIf = "applicantdetails.controls['ContactNo'].errors?.['required']">
+                Contact Number is required
+              </div>
+              <div *ngIf = "applicantdetails.controls['ContactNo'].errors?.['pattern']">
+                Contact Number must be 10 digits
+            </div>
+                  
+                  
+        </div>
+        <div  class="form-group mb-4"><label  for="form1Example8"
+            class="form-label">Email ID</label>
+            <!-- Password input -->
+            <input  type="email" id="form1Example8"
+            name="EmailId" formControlName="EmailId" class="form-control "></div>
+
+            <div class="alert-error" [hidden] = "applicantdetails.controls['EmailId'].valid || applicantdetails.controls['EmailId'].pristine">
+             <div *ngIf = "applicantdetails.controls['EmailId'].errors?.['required']">
+               Email ID is required
+             </div>
+             
+             
+           </div>
+           <div  class="form-group mb-4"><label  for="form1Example9"
+            class="form-label">Address</label>
+            <!-- Password input -->
+            <input  type="text" id="form1Example9"
+            name="Address" formControlName="Address" class="form-control "></div>
+
+            <div class="alert-error" [hidden] = "applicantdetails.controls['Address'].valid || applicantdetails.controls['Address'].pristine">
+             <div *ngIf = "applicantdetails.controls['Address'].errors?.['required']">
+               Address is required
+             </div>
+             
+             
+           </div>
+           <div  class="form-group mb-4"><label  for="form1Example10"
+            class="form-label">State</label>
+            <!-- Password input -->
+            <input  type="text" id="form1Example10"
+            name="State" formControlName="State" class="form-control "></div>
+
+            <div class="alert-error" [hidden] = "applicantdetails.controls['State'].valid || applicantdetails.controls['State'].pristine">
+             <div *ngIf = "applicantdetails.controls['State'].errors?.['required']">
+               State is required
+             </div>
+             <div *ngIf = "applicantdetails.controls['State'].errors?.['pattern']">
+              State Name Must be Characters 
             
-    
-        </form>
-    </div>
+          </div>
+             
+           </div>
+           <div  class="form-group mb-4"><label  for="form1Example11"
+            class="form-label">City</label>
+            <!-- Password input -->
+            <input  type="text" id="form1Example11"
+            name="City" formControlName="City" class="form-control "></div>
+
+            <div class="alert-error" [hidden] = "applicantdetails.controls['City'].valid || applicantdetails.controls['City'].pristine">
+             <div *ngIf = "applicantdetails.controls['City'].errors?.['required']">
+               City is required
+             </div>
+             <div *ngIf = "applicantdetails.controls['City'].errors?.['pattern']">
+              City Name Must be Characters 
+                    
+            </div>
+               
+             </div>
+             <div  class="form-group mb-4"><label  for="form1Example12"
+              class="form-label">Pincode</label>
+              <!-- Password input -->
+              <input  type="number" id="form1Example12"
+              name="Pincode" formControlName="Pincode" class="form-control "></div>
+
+              <div class="alert-error" [hidden] = "applicantdetails.controls['Pincode'].valid || applicantdetails.controls['Pincode'].pristine">
+               <div *ngIf = "applicantdetails.controls['Pincode'].errors?.['required']">
+                 PinCode is required
+               </div>
+               
+               </div>
+               <div  class="form-group mb-4"><label  for="form1Example13"
+                  class="form-label">Type Of Employement</label>
+                  <!-- Password input -->
+                  <input  type="text" id="form1Example13"
+                  name="TypeOfEmployement" formControlName="TypeOfEmployement" class="form-control "></div>
+ 
+                  <div class="alert-error" [hidden] = "applicantdetails.controls['TypeOfEmployement'].valid || applicantdetails.controls['TypeOfEmployement'].pristine">
+                   <div *ngIf = "applicantdetails.controls['TypeOfEmployement'].errors?.['required']">
+                     Employement Type is required
+                   </div>
+                   
+                   
+                 </div>
+                 <div  class="form-group mb-4"><label  for="form1Example14"
+                  class="form-label">Yearly Salary</label>
+                  <!-- Password input -->
+                  <input  type="number" id="form1Example14"
+                  name="YearlySalary" formControlName="YearlySalary" class="form-control "></div>
+ 
+                  <div class="alert-error" [hidden] = "applicantdetails.controls['YearlySalary'].valid || applicantdetails.controls['YearlySalary'].pristine">
+                   <div *ngIf = "applicantdetails.controls['YearlySalary'].errors?.['required']">
+                     Yearly Salary is required
+                   </div>
+                </div>
+                <div  class="form-group mb-4"><label  for="form1Example15"
+                 class="form-label">Existing EMI</label>
+                 <!-- Password input -->
+                 <input  type="number" id="form1Example15"
+                 name="ExistingEmi" formControlName="ExistingEmi" class="form-control "></div>
+
+                 <div class="alert-error"[hidden] = "applicantdetails.controls['ExistingEmi'].valid || applicantdetails.controls['ExistingEmi'].pristine">
+                  <div *ngIf = "applicantdetails.controls['ExistingEmi'].errors?.['required']">
+                    Existing EMI is required
+                  </div>
+                  
+                  
+                </div>
+                <div  class="form-group mb-4"><label  for="form1Example16"
+                 class="form-label">UserID</label>
+                 <!-- Password input -->
+                 <input  type="email" id="form1Example16"
+                 name="UserId" formControlName="UserId" class="form-control "></div>
+
+                 <div [hidden] = "applicantdetails.controls['UserId'].valid || applicantdetails.controls['UserId'].pristine">
+                  <div class="alert-error" *ngIf = "applicantdetails.controls['UserId'].errors?.['required']">
+                    UserId is required
+                  </div>
+                  
+                  
+                </div>
+
+            
+                       
+                     
+
+      <button  type="submit" class="btn btn-danger btn-block text-center signin" >Submit</button>
+      <button  type="submit" class="btn btn-danger btn-block text-center signin" routerLink="/vehicle" >Next</button>
+   
+    </form>
+  </div>
+</div>
 </body>
+
+
+                   
+                   
+                  

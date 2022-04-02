@@ -11,62 +11,76 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './vehicle.component.html',
   styleUrls: ['./vehicle.component.css']
 })
-export class VehicleComponent { //implements OnInit {
-
-  /*constructor() { }
-
-  ngOnInit(): void {
-  }*/
-
-  CustomerID:number=10001;
-  custid? : number;
-  vehicleDataSubmit(data:any)
-  {
-    console.log(data);
-  }
-  VehicleDetails()
-  {
-    const vehicleData: Vehicle =<Vehicle>{
-     
-    }
-    console.log(vehicleData);
-    this._rs.VehicleDetails(vehicleData)
-    .subscribe({next:(data:any) =>{
-      console.log(data);
-      alert("Successfully Added")
-    },
-    error:(errorMessage : HttpErrorResponse) => {
-      console.log(errorMessage);
-      //alert("Record Already Exists")
-    },
-    complete: () =>{}
-    
-    });
-
-}/*
-custid? : number;
-vehicleDataSubmit(data:any)
-{
-  console.log(data.value);
-  const vehicleData: Vehicle =<Vehicle>{
-      CarMake:data.value.CarMake,
-      CarModel:data.value.CarModel,
-      ExshowroomPrice: data.value.ExshowroomPrice,
-      OnRoadPrice : data.value.OnRoadPrice,
-      CustomerId : this.custid
-};
-
-  this._rs.VehicleDetails(vehicleData)
-  .subscribe({next:(data:any) =>{
-  },
-  error:(errorMessage : HttpErrorResponse) => {
-    console.log(errorMessage);
-  },
-  complete: () =>{}
+export class VehicleComponent implements OnInit {
   
-  });
-}*/
+  CarMake:string='';
+CarModel:string='';
+ExShowroomPrice:Number=0;
+OnRoadPrice:Number=0;
+CustomerId=11005;
+  
+  InUse!:boolean
+  vehicledetails:FormGroup = new FormGroup(
+    {
+     
+      CarMake:new FormControl('',[Validators.required]),
+      CarModel:new FormControl('',[Validators.required]),
+      ExShowroomPrice:new FormControl('',Validators.required),
+      OnRoadPrice:new FormControl('',Validators.required),
+      CustomerId:new FormControl('',Validators.required)
+   }
+  )
 
-constructor(private router:Router, private _rs:VehicleService){}
+  Usercredentials()
+  {
+    console.log(this.vehicledetails.value);
+    const vehicledata :Vehicle = <Vehicle>
+    {
+      CarMake : this.vehicledetails.value.CarMake,
+     CarModel : this.vehicledetails.value.CarModel,
+     ExShowroomPrice : this.vehicledetails.value.ExShowroomPrice,
+     OnRoadPrice : this.vehicledetails.value.OnRoadPrice,
+     CustomerId : this.vehicledetails.value.CustomerId
+     //RoleId : Number(this.registration.value.RoleId)
+     }
+    
+    
+    this._rs.addUserRecord(vehicledata)
+    .subscribe({next: (data: any)=>{
+      alert("Successfully added record")
+    },
+     error: (errorMessage : HttpErrorResponse) => {
+     console.log(errorMessage);
+     alert("Record Already exists")
+   },
+     complete: () => {}});
+ }
 
+
+ constructor(private router:Router, private _rs:VehicleService) { }
+
+ ngOnInit(): void {
+ }
+ get  carMake()
+ {
+   return this.vehicledetails.get("CarMake")
+ }
+ get carModel()
+ {
+   return this.vehicledetails.get("CarModel")
+ }
+ get exShowroomPrice()
+ {
+   
+   return this.vehicledetails.get("ExShowroomPrice")
+ }
+  get onRoadPrice()
+ {
+   
+   return this.vehicledetails.get("OnRoadPrice")
+ }
+get customerId()
+ {
+  return this.vehicledetails.get("CustomerId")
+ } 
 }
