@@ -16,11 +16,17 @@ import { ClientListComponent } from './admin/client-list/client-list/client-list
 import { LoanDetailsComponent } from './user/loan-details/loan-details.component';
 import {AuthGuard} from './cors/auth.guard'
 import { AboutusComponent } from "./home/aboutus/aboutus.component";
+import {ForgetPasswordComponent } from "./user/forget-password/forget-password.component";
 
 const routes: Routes = [
   {
     path: 'login',
     component:LoginComponent
+    
+  },
+  {
+    path: 'forgetpassword',
+    component:ForgetPasswordComponent
     
   },
   {
