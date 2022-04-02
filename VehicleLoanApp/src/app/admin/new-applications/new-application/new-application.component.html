@@ -1,4 +1,8 @@
-<mat-sidenav-container class="sidenav-container">
+<head>
+  <link rel="stylesheet" href = "http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  <body>
+    <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport
         [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -9,7 +13,7 @@
         <a mat-list-item routerLink="/clientlist">Clients</a>
         <a mat-list-item routerLink="/newapplication">Applications</a>
         <a mat-list-item routerLink="/adminrejectedlist">RejectedList</a>
-        <a mat-list-item routerLink="/login">Log Out</a>
+        <a mat-list-item (click) = "onClick()">Log Out</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -31,7 +35,8 @@
                 <td>Customer Id</td>
                 <td>First Name</td>
                 <td>Last Name</td>
-                <td>Email</td>
+                <td>Email </td>
+                <td>Action</td>
         </thead>
         <tbody *ngFor = "let i of applications">
             <tr>
@@ -39,6 +44,7 @@
             <td>{{i.firstName}}</td>
             <td>{{i.lastName}}</td>
             <td>{{i.emailId}}</td>
+            <td [routerLink] = "['/customerApplication', i.customerId]">Edit<i class='fas fa-edit' ></i></td>
         </tr>
     
         </tbody>
@@ -46,5 +52,6 @@
     
     </mat-sidenav-content>
   </mat-sidenav-container>
+  </body>
 
 

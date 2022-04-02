@@ -5,6 +5,7 @@ import {applicantDetails} from '../../Models/applicantDetails'
 import { rejectedListService } from '../rejected-list.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rejected-list',
@@ -19,7 +20,8 @@ export class RejectedListComponent implements OnInit {
   applicants?: applicantDetails[];
   errMsg? :string ;
   
-  constructor(private  _rls:rejectedListService, private breakpointObserver: BreakpointObserver) { }
+  constructor(private  _rls:rejectedListService, private breakpointObserver: BreakpointObserver , private router:Router) { }
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
   .pipe(
     map(result => result.matches),
@@ -43,6 +45,15 @@ export class RejectedListComponent implements OnInit {
     const result:  Observable<applicantDetails[]> = this._rls.getRejectedList();
     result.subscribe(observerObj);
   
+  }
+  onClick(){
+    let text = "Are you sure you would like to log out??"
+    if(confirm(text) == true){
+      this.router.navigate(['/login']);
+    }
+    else{
+      this.router.navigate(['/adminrejectedlist']);
+    }
   }
 
 }

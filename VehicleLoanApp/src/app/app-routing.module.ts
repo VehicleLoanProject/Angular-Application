@@ -36,7 +36,7 @@ const routes: Routes = [
    component:ApplicationComponent
   },
   {
-    path: 'customerApplication',
+    path: 'customerApplication/:id',
     component:CustomerapplicationComponent
   
   },

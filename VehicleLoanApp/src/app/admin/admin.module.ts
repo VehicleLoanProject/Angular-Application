@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomerapplicationComponent } from './customerapplication/customerapplication.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,7 +11,7 @@ import { CustomerapplicationComponent } from './customerapplication/customerappl
     
   ],
   imports: [
-    CommonModule
+    CommonModule,ReactiveFormsModule
   ],
   exports:[CustomerapplicationComponent]
 

@@ -5,6 +5,7 @@ import { NewApplicationsServices } from '../new-application.service';
 import {allApplicationDetails} from '../../Models/newApplicationModel';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-applications',
@@ -15,7 +16,7 @@ export class NewApplicationsComponent implements OnInit {
 
   applications?:allApplicationDetails[];
   errMsg?: string;
-  constructor(private _nas :NewApplicationsServices,private breakpointObserver: BreakpointObserver) { 
+  constructor(private _nas :NewApplicationsServices,private breakpointObserver: BreakpointObserver , private router:Router) { 
     console.log("new aplication component.");
   }
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -42,6 +43,16 @@ export class NewApplicationsComponent implements OnInit {
     };
     const result:  Observable<allApplicationDetails[]> = this._nas.getNewApplication();
     result.subscribe(observerObj);
+  }
+
+  onClick(){
+    let text = "Are you sure you would like to log out??"
+    if(confirm(text) == true){
+      this.router.navigate(['/login']);
+    }
+    else{
+      this.router.navigate(['/newapplication']);
+    }
   }
 
 

@@ -9,7 +9,7 @@
         <a mat-list-item routerLink="/clientlist">Clients</a>
         <a mat-list-item routerLink="/newapplication">Applications</a>
         <a mat-list-item routerLink="/adminrejectedlist">RejectedList</a>
-        <a mat-list-item routerLink="/login">Log Out</a>
+        <a mat-list-item (click) = "onClick()">Log Out</a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
