@@ -240,8 +240,8 @@
                        
                      
 
-      <button  type="submit" class="btn btn-danger btn-block text-center signin" >Submit</button>
-      <button  type="submit" class="btn btn-danger btn-block text-center signin" routerLink="/vehicle" >Next</button>
+      <button  type="submit" class="btn btn-danger btn-block text-center signin"[disabled] ="applicantdetails.invalid">Submit</button>
+      <button  type="submit" class="btn btn-danger btn-block text-center signin"[disabled]="applicantdetails.invalid" routerLink="/vehicle" >Next</button>
    
     </form>
   </div>
