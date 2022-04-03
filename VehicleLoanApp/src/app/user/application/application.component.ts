@@ -72,11 +72,11 @@ export class ApplicationComponent implements OnInit {
      YearlySalary: this.applicantdetails.value.YearlySalary, 
      ExistingEmi: this.applicantdetails.value.ExistingEmi,
      UserId: this.applicantdetails.value.UserId
-     //RoleId : Number(this.registration.value.RoleId)
      }
 
     this._rs.addApplicantRecord(applicantdata)
-    .subscribe({next:(data:any)=>{
+    .subscribe({next:(data:any)=>{console.log(data.data);
+      this.CustomerId = data.data;
    alert("Successfully Added our Details")
  },
   error: (errorMessage : HttpErrorResponse) => {
