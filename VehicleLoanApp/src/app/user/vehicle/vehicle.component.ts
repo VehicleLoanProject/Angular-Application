@@ -63,6 +63,11 @@ CustomerId=11005;
   this.CustomerId = this.activatedRoute.snapshot.params['id'];
   console.log(this.CustomerId);
  }
+
+ onClick(){
+  this.router.navigate(['/loandetails',this.CustomerId]);
+ }
+
  get  carMake()
  {
    return this.vehicledetails.get("CarMake")
