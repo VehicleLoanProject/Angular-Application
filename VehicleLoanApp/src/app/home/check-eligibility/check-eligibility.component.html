@@ -7,9 +7,10 @@
   </head>
   <button class="home" routerLink="/homepage">HOME</button>
   
-   <H1 style="text-align: center;">Check Eligibilty</H1><br><br>
+  <H1 class="check">Check Eligibilty</H1><br><br>
     <!--button class="home" routerLink="/homepage">HOME</button-->
     <body class="body">
+             
   <form #eligibilityForm="ngForm" (ngSubmit)="checkeligibility(eligibilityForm.value)">
     
     <label for="fage"> Age of the Applicant: </label><br>

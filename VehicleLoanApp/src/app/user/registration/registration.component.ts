@@ -21,7 +21,7 @@ RoleId = 100;
     {
      
       UserId:new FormControl('',[Validators.email,Validators.required]),
-      Password:new FormControl('',[Validators.required,Validators.max(10),Validators.min(6)]),
+      Password:new FormControl('',[Validators.required,Validators.minLength(7),Validators.maxLength(10)]),
       RoleId:new FormControl('',Validators.required)
    }
   )

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,Validators } from "@angular/forms";
+import { FormGroup,FormControl,Validators, FormBuilder } from "@angular/forms";
 import { Router } from '@angular/router';
 import { UserInfo } from '../models/UserInfo';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ForgetpasswordService } from "../services/forgetpassword.service";
+import { ConformValidators } from "./confirm.validators";
+
 @Component({
   selector: 'app-forget-password',
   templateUrl: './forget-password.component.html',
@@ -16,20 +18,15 @@ export class ForgetPasswordComponent implements OnInit {
   RoleId = 100;
 
   InUse!:boolean
-  forgetpassword:FormGroup = new FormGroup(
-    {
-     
-      UserId:new FormControl('',[Validators.email,Validators.required]),
-      Password:new FormControl('',[Validators.required,Validators.max(10),Validators.min(6)]),
-      RoleId:new FormControl('',Validators.required)
-   }
-  )
+  forgetpassword:FormGroup = new FormGroup({});
+
   Usercredentials()
   {
      console.log(this.forgetpassword.value);
      const userData :UserInfo = <UserInfo>{
-       UserId : this.forgetpassword.value.UserId,
+      UserId : this.forgetpassword.value.UserId,
       Password : this.forgetpassword.value.Password,
+      ConformPassword:this.forgetpassword.value.ConformPassword,
       RoleId : Number(this.forgetpassword.value.RoleId)
       }
 
@@ -40,13 +37,27 @@ export class ForgetPasswordComponent implements OnInit {
      },
       error: (errorMessage : HttpErrorResponse) => {
       console.log(errorMessage);
-      alert("Account Already exists,Please login")
+      alert("")
     },
       complete: () => {}});
   }
 
 
-  constructor(private router:Router, private _rs:ForgetpasswordService) { }
+  constructor(private router:Router, private _rs:ForgetpasswordService,private fb:FormBuilder) {
+
+    this.forgetpassword=fb.group(
+      {
+     
+        UserId:new FormControl('',[Validators.email,Validators.required]),
+        Password:new FormControl('',[Validators.required,Validators.minLength(7),Validators.maxLength(10)]),
+        ConformPassword:new FormControl('',[Validators.required]),
+        RoleId:new FormControl('',Validators.required)
+     },
+     {
+       validator:ConformValidators('Password','ConformPassword')
+     }
+    )
+   }
 
   ngOnInit(): void {
   }
@@ -62,10 +73,8 @@ export class ForgetPasswordComponent implements OnInit {
   {
     return this.forgetpassword.get("RoleId")
   }
-
-  
-  
-
-  
-
+  get conformpassword()
+  {
+    return this.forgetpassword.get("ConformPassword")
+  }
 }
