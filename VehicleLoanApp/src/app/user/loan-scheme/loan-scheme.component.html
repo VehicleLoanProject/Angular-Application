@@ -3,6 +3,8 @@
     <br>
     
   </header>
+   <br>
+   <button type="button" class="btn btn-primary" (click)="goBack()"> Back</button>
 <section>
     <div class="container">
         <div class="card">
@@ -12,27 +14,41 @@
         <div *ngIf = "schemes && schemes.length > 0">        
             <div *ngFor = "let item of schemes">
                 <div class="card">
-                    <div class="card-body"><p [routerLink] = "['/loan-offer-page',item.schemeName]" (click) = "get(item.schemeName)">{{item.schemeName}}</p></div>
+                    <div class="card-body"><p [routerLink] = "['/loan-offer-page',item.schemeName]" >{{item.schemeName}}</p></div>
                 </div>
             </div>
         </div>
     </div> 
     
-
-<h2>Auto-Loan offers</h2>
+    
+   
+<h2 style="text-align: center;">Auto-Loan offers</h2>
+<div id="body">
 <p>
-Hey , Are you planning to buy a car , don't you have enough money to buy the favourite brand , don't worry we are here to help you.
-I Bank provides a plenty of auto-loan schemes with an attractive offers.
+Hey , Are you planning to buy a car ,
+We provides a plenty of auto-loan schemes with an attractive offers.A Car Loan will bring that dream of owning a vehicle within your reach.
 Check out which is suitable for you. The loans are available at atractive interest rates starting at 8% p.a. with nominal processing fee.</p>
-<br><br>
+<br><br><div class="container-1">
 <b>Features of Vehicle loan</b>,
 <ul>
     <li>Easy access to loans.</li>
     <li>Affordable interest rates and other charges.<li>
     <li>Minimal documentation process.</li>
     <li></li>
-</ul>
-
+</ul></div>
+</div>
 
 
 </section>
+<div style="height: 100px;"></div>
+<footer class="footer">
+    <a routerLink="/aboutus">About Us</a>
+     &nbsp;&nbsp;
+      <a href="#privacyPolicy">Privicy Policy </a>
+    &nbsp; &nbsp;
+    <a href="#carrier">Carrier</a>
+    <br><br><br>&nbsp;&nbsp;   
+     <p>@vehicleloan, Some rights reserved</p>
+ 
+  </footer>
+

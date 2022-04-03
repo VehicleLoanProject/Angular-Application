@@ -76,7 +76,7 @@ export class ApplicationComponent implements OnInit {
 
     this._rs.addApplicantRecord(applicantdata)
     .subscribe({next:(data:any)=>{console.log(data.data);
-      this.CustomerId = data.data;
+      this.CustomerId = Number(data.data);
    alert("Successfully Added our Details")
  },
   error: (errorMessage : HttpErrorResponse) => {

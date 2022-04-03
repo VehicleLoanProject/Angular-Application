@@ -61,6 +61,7 @@ CustomerId=11005;
 
  ngOnInit(): void {
   this.CustomerId = this.activatedRoute.snapshot.params['id'];
+  console.log(this.CustomerId);
  }
  get  carMake()
  {

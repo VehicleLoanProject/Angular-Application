@@ -1,3 +1,14 @@
+.header1{
+  width: max-width;
+  height: 100px;
+  background-color:#777;
+  text-align:center;
+  color: white;
+  font-size: medium;
+ border-radius: 10px;
+ text-align: center;
+ text-size-adjust: 40;
+}
 .container{
     display: grid;
     grid-template-columns: auto;
@@ -25,4 +36,12 @@
     width: 300px;
     border-collapse: collapse;
   }
+  .footer {
+    background-color: #777;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+
   

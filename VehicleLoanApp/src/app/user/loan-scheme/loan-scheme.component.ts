@@ -40,10 +40,7 @@ export class LoanSchemeComponent implements OnInit {
    
   @Output() emitEvent : EventEmitter<string> = new EventEmitter<string>(); 
 
- get(schemeName : string){
-  
-  console.log("scheme selected"); 
-  return this.emitEvent.emit(schemeName);
-
- }
+  goBack(){
+    this.router.navigate(['/userdashboard']);
+  }
 }
