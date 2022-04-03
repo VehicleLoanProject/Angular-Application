@@ -1,0 +1,21 @@
+.header1{
+    width: max-width;
+    height: 100px;
+    background-color:#777;
+    text-align:left;
+    color: white;
+    font-size: medium;
+   border-radius: 10px;
+   text-align: left;
+   text-size-adjust: 40;
+  }
+.container{
+    display: grid;
+    grid-template-columns: auto;
+    float: left;
+    width: 200px;
+}
+button{
+    border: 0px;
+    background-color: white;
+}

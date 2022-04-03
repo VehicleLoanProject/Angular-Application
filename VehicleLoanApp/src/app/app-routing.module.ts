@@ -17,6 +17,8 @@ import { LoanDetailsComponent } from './user/loan-details/loan-details.component
 import {AuthGuard} from './cors/auth.guard'
 import { AboutusComponent } from "./home/aboutus/aboutus.component";
 import {ForgetPasswordComponent } from "./user/forget-password/forget-password.component";
+import {LoanSchemeComponent} from './user/loan-scheme/loan-scheme.component';
+import {LoanOfferPageComponent} from './user/loan-offer/loan-offer.component';
 
 const routes: Routes = [
   {
@@ -94,6 +96,11 @@ const routes: Routes = [
   },
   {
     path:'admindashboard', component:AdmindashboardComponent, canActivate: [AuthGuard]
+  },
+  {
+    path :'loan-scheme', component:LoanSchemeComponent
+  },{
+    path:'loan-offer-page/:schemeName' ,component:LoanOfferPageComponent
   }
 ];
 

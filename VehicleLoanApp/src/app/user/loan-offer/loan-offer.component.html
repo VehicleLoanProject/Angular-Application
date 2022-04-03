@@ -1,0 +1,58 @@
+<header class="header1">
+    <h2>VEHICLE LOAN</h2>
+    <br>
+    
+  </header>
+<section>
+    <div class="container">
+        <div class="card">
+            <div class="card-body"><p routerLink = '/loan-scheme'>Loan Schemes</p> </div>
+        </div>
+
+        <div *ngIf = "schemes && schemes.length > 0">        
+            <div *ngFor = "let item of schemes">
+                <div class="card">
+                    <div class="card-body"><p>{{item.schemeName}}</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="goBack()"> Back</button>
+    <div id="main" class="center">
+        <div *ngIf = "data && data.length > 0">  
+            <div *ngFor = "let i of data">
+                    <h2>{{i.schemeName}}</h2>
+                    <p>{{i.schemeDescription}}</p>
+                    <br><br><br>
+                    <table>
+                        <thead></thead>
+                        <tbody>
+                            <tr>
+                                <td>Loan Amount Upto</td>
+                                <td>{{i.maxLoanAmount | currency : 'INR'}}</td>
+                                    
+                            </tr>
+
+                            <tr>
+                                <td>Best Rate</td>
+                                <td>{{i.interestRate | percent}}</td>
+                            </tr> 
+                            <tr>
+                                <td>Emi</td>
+                                <td>{{i.emi | currency : 'INR'}}</td>
+                            </tr> 
+                            <tr>
+                                <td>Processing Fee</td>
+                                <td>{{i.processingFee | currency : 'INR'}}</td>
+                            </tr> 
+                        </tbody>  
+                </table> 
+            </div>
+    </div>
+    <br><br>
+    <button type="button" class="btn btn-primary" routerLink = "/emicalculator">Emi Scheduler</button>&nbsp;&nbsp;
+    <button type="button" class="btn btn-primary" routerLink = "/application">Apply Now</button>
+</div>
+
+</section>

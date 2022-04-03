@@ -1,0 +1,28 @@
+.container{
+    display: grid;
+    grid-template-columns: auto;
+    float: left;
+    width: 200px;
+  }
+  #main{
+    text-align: center;
+  }
+  #Container{
+      text-align: center;
+      float: right;
+      height: 500px;
+      width: 400px;
+      background-color: white;
+      box-shadow: 0 4px 8px  rgba(0,0,0,2);
+    }
+  
+    h2{
+      text-align: center;
+    }
+    .center{
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    border-collapse: collapse;
+  }
+  

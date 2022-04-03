@@ -10,8 +10,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { RegistrationService } from "../user/services/registration.service";
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { ApplicantService } from './application/applicant.service';
 import { ForgetpasswordService } from './services/forgetpassword.service';
+import { LoanSchemeComponent } from './loan-scheme/loan-scheme.component';
+import { LoanOfferPageComponent } from './loan-offer/loan-offer.component';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { ForgetpasswordService } from './services/forgetpassword.service';
     RegistrationComponent,
     UserDashboardComponent,
     LoanDetailsComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    LoanSchemeComponent,
+    LoanOfferPageComponent
   ],
   imports: [
     CommonModule,ReactiveFormsModule,FormsModule,AppRoutingModule

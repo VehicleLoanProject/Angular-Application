@@ -1,0 +1,38 @@
+<header class="header1">
+    <h2>VEHICLE LOAN</h2>
+    <br>
+    
+  </header>
+<section>
+    <div class="container">
+        <div class="card">
+            <div class="card-body"><p routerLink = '/loan-scheme' >Loan Schemes</p> </div>
+        </div>
+        
+        <div *ngIf = "schemes && schemes.length > 0">        
+            <div *ngFor = "let item of schemes">
+                <div class="card">
+                    <div class="card-body"><p [routerLink] = "['/loan-offer-page',item.schemeName]" (click) = "get(item.schemeName)">{{item.schemeName}}</p></div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+
+<h2>Auto-Loan offers</h2>
+<p>
+Hey , Are you planning to buy a car , don't you have enough money to buy the favourite brand , don't worry we are here to help you.
+I Bank provides a plenty of auto-loan schemes with an attractive offers.
+Check out which is suitable for you. The loans are available at atractive interest rates starting at 8% p.a. with nominal processing fee.</p>
+<br><br>
+<b>Features of Vehicle loan</b>,
+<ul>
+    <li>Easy access to loans.</li>
+    <li>Affordable interest rates and other charges.<li>
+    <li>Minimal documentation process.</li>
+    <li></li>
+</ul>
+
+
+
+</section>
