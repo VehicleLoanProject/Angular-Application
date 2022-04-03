@@ -43,6 +43,7 @@ export class CustomerapplicationComponent implements OnInit {
     existingEmi: new FormControl({value :'', disabled : true}),
     loanAmount :new FormControl({value :'', disabled : true}),
     loanTenure : new FormControl({value :'', disabled : true}),
+    loanScheme: new FormControl({value :'', disabled : true}),
     interestRate :new FormControl({value :'', disabled : true}),
     carMake : new FormControl({value :'', disabled : true}),
     carModel :new FormControl({value :'', disabled : true}),
@@ -86,6 +87,7 @@ export class CustomerapplicationComponent implements OnInit {
           existingEmi: userData.existingEmi,
           loanAmount :userData.loanAmount,
           loanTenure : userData.loanAmount,
+          loanScheme : userData.loanSchemeName,
           interestRate : userData.interestRate,
           carMake : userData.carMake,
           carModel :userData.carModel,
@@ -105,6 +107,7 @@ export class CustomerapplicationComponent implements OnInit {
     this.loanRecord = {
       loanAmount: this.application?.loanAmount,
       loanTenure: this.application?.loanTenure,
+      loanSchemeName:this.application?.loanSchemeName,
       interestRate : this.application?.interestRate,
       customerId : this.application?.customerId,
       statusId : 2
@@ -126,6 +129,7 @@ export class CustomerapplicationComponent implements OnInit {
     this.loanRecord = {
       loanAmount: this.application?.loanAmount,
       loanTenure: this.application?.loanTenure,
+      loanSchemeName:this.application?.loanSchemeName,
       interestRate : this.application?.interestRate,
       customerId : this.application?.customerId,
       statusId : 3

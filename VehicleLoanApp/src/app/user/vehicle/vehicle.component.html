@@ -73,10 +73,10 @@
                             </div>
                           
                         </div>
-                        <div class="form-group mb-4"><label for="form1Example6" class="form-label">CustomerId</label><br>
+                        <!--<div class="form-group mb-4"><label for="form1Example6" class="form-label">CustomerId</label><br>
                             
                               <input  type="number" id="form1Example6"
-                         name="CustomerId" formControlName="CustomerId" class="form-control "></div>
+                         name="CustomerId" formControlName="CustomerId" class="form-control "></div>-->
         
                                
                               <div class="alert-error" [hidden] = "vehicledetails.controls['CustomerId'].valid || vehicledetails.controls['CustomerID'].pristine">
@@ -86,7 +86,7 @@
                             </div>
 
                             <button  type="submit" class="btn btn-danger btn-block text-center signin" >Submit</button>&nbsp;&nbsp;
-                            <button  type="submit" class="btn btn-danger btn-block text-center signin" routerLink="/loan-details" >Next</button>
+                            <button  type="submit" class="btn btn-danger btn-block text-center signin" [routerLink] = "['/loan-details/CustomerId']"  >Next</button>
                          
                           </form>
                         </div>

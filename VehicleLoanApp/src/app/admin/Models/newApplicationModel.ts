@@ -17,6 +17,7 @@ export interface allApplicationDetails{
     existingEmi?: Number;
     loanAmount :number;
     loanTenure : number;
+    loanSchemeName:string;
     interestRate : number;
     carMake : string ;
     carModel :string ;

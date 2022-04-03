@@ -15,67 +15,87 @@
         <div class="container">
                <h2>Loan Details</h2>
     
-          <form #loandetailsForm="ngForm" (ngSubmit)="loandetails(loandetailsForm.value)">
+              <form [formGroup] = "loanDetailsForm" (ngSubmit)="submitLoanDetails()">
     
-            <div class="loandetailsForm"></div>
+                    <div class="loandetailsForm"></div>
+            
+                    <br>
+            
+                    <div class="col-sm-10">
+            
+                    <label for="LoanAmount">Loan Amount :</label>
+            
+                    <input type="number" name="loanAmount" id="loanAmount" formControlName = "loanAmount">&nbsp; &nbsp;
+            
+                    </div>
+            
+                    <br>
+            
+                    <div class="col-sm-10">
+            
+                    <label for="LoanTenure">Loan Tenure :</label>
+            
+                    <select [ngModel]="LoanTenure" name="loanTenure" (change)="selected($event)" formControlName = "loanTenure">
+            
+                      <option selected="selected"value=".5" >6 months</option>
+            
+                      <option value="1" >1 year</option>
+            
+                      <option value="2" >2 year</option>
+            
+                      <option value="3" >3 year</option>
+                      <option value="1" >4 year</option>
+                      <option value="1" >5 year</option>
+            
+            
+                      </select>
+            
+                    </div>
+            
+                    
+            
+                      <div class="form-group">
+                    <br>
+                <div class="col-sm-10">
+            
+                            <label for="LoanScheme">Loan Scheme:</label>
+                    
+                            <select [ngModel]="LoanScheme" name="loanScheme" (change)="selected($event)" formControlName = "loanScheme" >
+            
+                                  <option selected="selected"value="New Car Loan" >New Car Loan</option>
+                        
+                                  <option value="Pre-Owned Car Loan" >Pre-Owned Car Loan</option>
+                        
+                                  <option value="Loan Against Car">Loan Against Car</option>
+                            </select>       
+                    
+                            </div>
+                    <br>
+            
+            <div class="col-sm-10">
+            
+                        <label for="interestRate">Interest Rate :</label>
+            
+                       <input type="number" formControlName = "interestRate" >
+            
+                        </div>
+        
+            
+                        <br>
+            
+                        <div class="col-sm-10">
+            
+                          <button  class="btn btn-dark">Submit</button>
+                        
+            
+                        </div>
+            
+                      </div>
+            
+                  </form>
+            <button class="btn btn-dark" routerLink = "/userdashboard" style="margin-left: 80px;">Close</button>
+            
     
-            <br>
-    
-            <div class="col-sm-10">
-    
-            <label for="LoanAmount">Loan Amount :</label>
-    
-            <input type="text" name="LoanAmount"id="LoanAmount" ngModel>&nbsp; &nbsp;
-    
-            </div>
-    
-            <br>
-    
-            <div class="col-sm-10">
-    
-            <label for="LoanTenure">Loan Tenure :</label>
-    
-            <select [(ngModel)]="LoanTenure" name="LoanTenure" (change)="selected($event)">
-    
-              <option selected="selected"value="3 months" >3 months</option>
-    
-              <option value="6 months" >6 months</option>
-    
-              <option value="9 months">9 months</option>
-    
-              <option value="12 months" >12 months</option>
-    
-              <option value="18 months" >18 months</option>
-    
-              <option value="24 months" >24 months</option>
-    
-              </select>
-    
-            </div>
-    
-            <br>
-    
-              <div class="form-group">
-    
-    <div class="col-sm-10">
-    
-                <label for="InterestRate">Interest Rate :</label>
-    
-               <input ngmodel="disabledInput" type="text" placeholder="Interest Rate 7%" disabled>
-    
-                </div>
-    
-                <br>
-    
-                <div class="col-sm-10">
-    
-                  <button  class="btn btn-dark"  >Submit</button>
-    
-                </div>
-    
-              </div>
-    
-          </form>
     
         </div>
     

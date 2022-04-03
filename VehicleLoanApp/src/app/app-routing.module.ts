@@ -52,7 +52,7 @@ const routes: Routes = [
   
   },
   {
-    path: 'loandetails',
+    path: 'loandetails/:id',
     component:LoanDetailsComponent
   
   },
@@ -78,7 +78,7 @@ const routes: Routes = [
   
   },
   {
-    path: 'vehicle',
+    path: 'vehicle/:id',
     component:VehicleComponent
   
   },

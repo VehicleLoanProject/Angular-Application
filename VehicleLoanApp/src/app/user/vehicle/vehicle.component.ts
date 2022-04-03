@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../models/vehicle';
 import { VehicleService } from './vehicle.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -26,8 +26,8 @@ CustomerId=11005;
       CarMake:new FormControl('',[Validators.required]),
       CarModel:new FormControl('',[Validators.required]),
       ExShowroomPrice:new FormControl('',Validators.required),
-      OnRoadPrice:new FormControl('',Validators.required),
-      CustomerId:new FormControl('',Validators.required)
+      OnRoadPrice:new FormControl('',Validators.required)
+      //CustomerId:new FormControl('',Validators.required)
    }
   )
 
@@ -40,7 +40,7 @@ CustomerId=11005;
      CarModel : this.vehicledetails.value.CarModel,
      ExShowroomPrice : this.vehicledetails.value.ExShowroomPrice,
      OnRoadPrice : this.vehicledetails.value.OnRoadPrice,
-     CustomerId : this.vehicledetails.value.CustomerId
+     CustomerId : Number(this.CustomerId)
      //RoleId : Number(this.registration.value.RoleId)
      }
     
@@ -57,9 +57,10 @@ CustomerId=11005;
  }
 
 
- constructor(private router:Router, private _rs:VehicleService) { }
+ constructor(private router:Router, private _rs:VehicleService ,private activatedRoute : ActivatedRoute) { }
 
  ngOnInit(): void {
+  this.CustomerId = this.activatedRoute.snapshot.params['id'];
  }
  get  carMake()
  {
