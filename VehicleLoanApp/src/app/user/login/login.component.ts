@@ -40,13 +40,7 @@ export class LoginComponent implements OnInit {
           this.token = data.token;},
         error: (err) => {console.log(err),
         alert("Invalid User Id or Password !");},
-        complete: () =>{/* const snapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
-          if (snapshot.queryParams['returnUrl']) {
-            const returnUrl = snapshot.queryParams['returnUrl']
-            this.router.navigate([returnUrl])
-          } else {
-            this.router.navigate(['/userdashboard'])
-          }*/
+        complete: () =>{
         }
       });
      
